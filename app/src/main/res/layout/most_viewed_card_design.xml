@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="2dp"
+    android:elevation="8dp">
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/mv_image"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:src="@drawable/mcdonald_img"
+        android:scaleType="centerCrop"
+        tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/mv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mcdonalds_1"
+            android:layout_toEndOf="@+id/mv_image"
+            android:layout_marginStart="10dp"
+            android:textSize="20sp"
+            android:fontFamily="@font/baloo"
+            tools:ignore="HardcodedText" />
+        
+        <RatingBar
+            android:id="@+id/mv_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_below="@+id/mv_title"
+            android:layout_toEndOf="@+id/mv_image"
+            android:layout_marginStart="10dp"
+            android:rating="4"/>
+        
+        <TextView
+            android:id="@+id/mv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/this_is_demo_description_this_is_demo_description_this_is_demo_description"
+            android:layout_below="@+id/mv_rating"
+            android:layout_toEndOf="@+id/mv_image"
+            android:padding="10dp"/>
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

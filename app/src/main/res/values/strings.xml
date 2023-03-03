@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">City-Guide-App</string>
+    <string name="logo_name">Get A Way</string>
+    <string name="slogan_name">We will help you to find your wya!</string>
+    <string name="powered_by_line">Powered by Abhishek Bansode</string>
+    <string name="splash_screen_img">splash_screen_img</string>
+    <string name="backImage">backImage</string>
+
+    <!-- Titles -->
+    <string name="first_slide_title">Search Your location</string>
+    <string name="second_slide_title">Make A Call</string>
+    <string name="third_slide_title">Add Missing Place</string>
+    <string name="fourth_slide_title">Sit Back And Enjoy</string>
+
+    <!-- Descriptions -->
+    <string name="first_slide_desc">You can search any place nearby or with-in the specified city. We will display specific or all related locations.</string>
+    <string name="second_slide_desc">We provide almost all the numbers of all departments and shops registered with us. You can performed</string>
+    <string name="third_slide_desc">If you have a shop or somethings and want to be a part of our growing industry then add your place by</string>
+    <string name="fourth_slide_desc">We will handle everything for you. As you have the app in your pocket then you don\'t have to worry about</string>
+
+    <!-- Buttons -->
+    <string name="skip_btn">Skip</string>
+    <string name="next_btn">Next</string>
+    <string name="let_get_started_btn">Lets Get Started</string>
+    <string name="img_holder">img_holder</string>
+    <string name="menuImgDes">menuImgDes</string>
+    <string name="missing_place_icon_des">Missing_place_icon_Des</string>
+
+    <!-- Strings for DashBoard -->
+
+    <!-- Strings for Categories-->
+    <string name="hotels">Hotels</string>
+    <string name="restaurants">Restaurants</string>
+    <string name="shops">Shops</string>
+    <string name="banks">Banks</string>
+    <string name="airports">Airports</string>
+
+    <!-- Titles and descriptions -->
+    <string name="featured_locations">All Featured Locations</string>
+    <string name="featured_locations_descriptions">All the locations that are featured and have the top demand in town!</string>
+    <string name="most_viewed_locations">Most Viewed</string>
+    <string name="categories">Categories</string>
+    <string name="view_all">View All</string>
+    <string name="search_text">Search…</string>
+    <string name="searchIconToLeft">SearchIconToLeft</string>
+    <string name="mcdonald_s">McDonald\'s</string>
+    <string name="demo_desc">this_is_demo_description_this_is_demo_description_this_is_demo_description</string>
+    <string name="mcdonalds_1">McDonald\'s</string>
+    <string name="asbk_dkljod_jkj_woej_fskdj_wjewoj_wjekf_wejkwje">asbk dkljod jkj woej fskdj wjewoj wjekf wejkwje</string>
+    <string name="restaurant_1">Restaurant</string>
+    <string name="demo_desc1">this_is_demo_description_this_is_demo_description_this_is_demo_description</string>
+    <string name="this_is_demo_description_this_is_demo_description_this_is_demo_description">demo_des11</string>
+
+</resources>
