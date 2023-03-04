@@ -28,15 +28,15 @@
         android:id="@+id/skip_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SKIP"
+        android:text="@string/skip"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:padding="10dp"
         android:onClick="skip"
         android:backgroundTint="#00000000"
-        android:drawableRight="@drawable/skip_icon"
-        android:drawableEnd="@drawable/skip_icon"/>
+        android:drawableEnd="@drawable/skip_icon"
+        tools:ignore="UsingOnClickInXml" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -48,7 +48,8 @@
 
         <Button
             android:id="@+id/get_started_btn"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_height="wrap_content"
             android:background="@color/primary_color"
             android:text="@string/let_get_started_btn"
@@ -65,16 +66,16 @@
 
         <Button
             android:id="@+id/next_btn"
-            android:contentDescription="@string/next_btn"
-            android:onClick="next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:background="#00000000"
+            android:contentDescription="@string/next_btn"
             android:drawableEnd="@drawable/next_btn"
+            android:onClick="next"
             android:paddingBottom="30dp"
-            tools:ignore="RelativeOverlap" />
+            tools:ignore="RelativeOverlap,UsingOnClickInXml" />
 
 
     </RelativeLayout>

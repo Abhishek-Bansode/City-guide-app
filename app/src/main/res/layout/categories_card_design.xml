@@ -2,19 +2,22 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="250dp"
-    android:layout_height="150dp"
+    android:layout_height="200dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     app:cardCornerRadius="5dp"
     app:cardElevation="8dp"
     android:layout_margin="12dp">
 
     <RelativeLayout
+        android:id="@+id/background_gradient"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="15dp"
         android:background="@color/card2">
 
         <TextView
+            android:id="@+id/categories_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/restaurant_1"
@@ -22,6 +25,7 @@
             android:fontFamily="@font/baloo"/>
 
         <ImageView
+            android:id="@+id/categories_image"
             android:layout_width="110dp"
             android:layout_height="110dp"
             android:src="@drawable/restaurant_image"

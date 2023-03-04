@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="160dp"
     android:layout_height="300dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
     app:cardCornerRadius="2dp"
     app:cardElevation="8dp"
-    android:layout_margin="10dp">
+    tools:ignore="TextSizeCheck">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="15dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="15dp">
 
         <ImageView
             android:id="@+id/featured_image"
             android:layout_width="match_parent"
             android:layout_height="140dp"
-            android:src="@drawable/mcdonald_img"
             android:scaleType="centerCrop"
+            android:src="@drawable/mcdonald_img"
             tools:ignore="ContentDescription" />
 
         <TextView
@@ -29,19 +30,19 @@
             android:fontFamily="@font/baloo"
             android:text="@string/mcdonald_s"
             android:textColor="@color/colorAccent"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <RatingBar
+            style="@style/Widget.AppCompat.RatingBar.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:rating="3.5"
-            style="@style/Widget.AppCompat.RatingBar.Small"/>
-        
+            android:rating="3.5" />
+
         <TextView
             android:id="@+id/featured_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/demo_desc"/>
+            android:text="@string/demo_desc" />
 
 
     </LinearLayout>
