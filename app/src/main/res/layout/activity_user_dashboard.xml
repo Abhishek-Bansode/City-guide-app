@@ -41,7 +41,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/app_name"
@@ -104,6 +104,8 @@
                     <RelativeLayout
                         android:layout_width="60dp"
                         android:layout_height="60dp"
+                        android:layout_margin="10dp"
+                        android:elevation="8dp"
                         android:background="@color/card1">
 
                         <ImageView
@@ -135,6 +137,8 @@
                     <RelativeLayout
                         android:layout_width="60dp"
                         android:layout_height="60dp"
+                        android:layout_margin="10dp"
+                        android:elevation="8dp"
                         android:background="@color/card2">
 
                         <ImageView
@@ -166,6 +170,8 @@
                     <RelativeLayout
                         android:layout_width="60dp"
                         android:layout_height="60dp"
+                        android:layout_margin="10dp"
+                        android:elevation="8dp"
                         android:background="@color/card3">
 
                         <ImageView
@@ -198,6 +204,8 @@
                     <RelativeLayout
                         android:layout_width="60dp"
                         android:layout_height="60dp"
+                        android:layout_margin="10dp"
+                        android:elevation="8dp"
                         android:background="@color/card4">
 
                         <ImageView
@@ -232,9 +240,12 @@
 
                 <LinearLayout
                     android:id="@+id/featured_background"
-                    android:layout_width="170dp"
-                    android:layout_height="280dp"
-                    android:layout_margin="10dp"
+                    android:layout_width="180dp"
+                    android:layout_height="300dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
                     android:background="@color/banner_background"
                     android:orientation="vertical">
 
@@ -252,7 +263,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="@string/featured_locations_descriptions" />
+                        android:text="@string/featured_locations_descriptions"
+                        android:textColor="#616161" />
 
 
                 </LinearLayout>
@@ -298,6 +310,7 @@
                 </RelativeLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/most_viewed_recycler"
                     android:layout_width="match_parent"
                     android:layout_height="100dp" />
             </LinearLayout>
@@ -335,8 +348,9 @@
                 </RelativeLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/categories_recycler1"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp" />
+                    android:layout_height="250dp"/>
             </LinearLayout>
 
         </LinearLayout>
