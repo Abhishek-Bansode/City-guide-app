@@ -44,7 +44,6 @@ public class UserDashboard extends AppCompatActivity {
     }
 
     private void categoriesRecycler() {
-        // copied from the vibha thakur repo
 
         //All Gradients for this view are
 
