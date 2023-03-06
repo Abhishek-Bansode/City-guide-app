@@ -4,12 +4,12 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/menu_dashboard_icon"
+            android:icon="@drawable/menu_drawer_black_icon"
             android:title="@string/home" />
 
         <item
             android:id="@+id/nav_search"
-            android:icon="@drawable/menu_search_icon"
+            android:icon="@drawable/search_icon"
             android:title="@string/search" />
 
         <item
@@ -36,7 +36,7 @@
 
                 <item
                     android:id="@+id/nav_profile"
-                    android:icon="@drawable/profile_icon"
+                    android:icon="@drawable/profile_account_icon"
                     android:title="@string/profile" />
 
                 <item

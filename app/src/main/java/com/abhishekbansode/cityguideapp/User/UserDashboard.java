@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,14 +16,20 @@ import com.abhishekbansode.cityguideapp.HelperClasses.HomeAdapter.FeaturedHelper
 import com.abhishekbansode.cityguideapp.HelperClasses.HomeAdapter.MostViewedAdapter;
 import com.abhishekbansode.cityguideapp.HelperClasses.HomeAdapter.MostViewedHelperClass;
 import com.abhishekbansode.cityguideapp.R;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
 public class UserDashboard extends AppCompatActivity {
 
+    // Variables
     RecyclerView featuredRecycler,mostViewedRecycler, categoriesRecycler;
 
     private GradientDrawable gradient1, gradient2, gradient3, gradient4;
+
+    // Drawer Menu
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
 
     RecyclerView.Adapter adapter;
 
@@ -39,6 +46,10 @@ public class UserDashboard extends AppCompatActivity {
         featuredRecycler = findViewById(R.id.featured_recycler);
         mostViewedRecycler = findViewById(R.id.most_viewed_recycler);
         categoriesRecycler = findViewById(R.id.categories_recycler1);
+
+        // Menu Hooks
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.navigation_view);
 
         // calling this methods to create the views
         featuredRecycler();
