@@ -20,7 +20,7 @@
     <!--Dashboard colors-->
     <!--body and background colors-->
     <color name="home_background">#f2f5f8</color>
-    <color name="banner_background">#f1E9CE</color>
+    <color name="banner_background">#F1E9CE</color>
     <color name="banner_background_light">#56F1E9CE</color>
 
     <!--card colors-->
