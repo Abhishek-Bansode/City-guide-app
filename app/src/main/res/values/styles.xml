@@ -16,9 +16,7 @@
 
         <item name="colorControlHighlight">@color/colorAccent</item>
 
-
     </style>
-
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
