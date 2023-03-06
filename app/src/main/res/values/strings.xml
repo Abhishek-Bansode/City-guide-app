@@ -53,5 +53,18 @@
     <string name="demo_desc1">this_is_demo_description_this_is_demo_description_this_is_demo_description</string>
     <string name="this_is_demo_description_this_is_demo_description_this_is_demo_description">demo_des11</string>
     <string name="skip">SKIP</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="all_categories">All Categories</string>
+    <string name="add_missing_place">Add Missing Place</string>
+    <string name="login">Login</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
+    <string name="restaurants1">Restaurants</string>
+    <string name="banks1">Banks</string>
+    <string name="education1">Education</string>
+    <string name="shops1">Shops</string>
+    <string name="share">Share</string>
+    <string name="rate_us">Rate us</string>
 
 </resources>
