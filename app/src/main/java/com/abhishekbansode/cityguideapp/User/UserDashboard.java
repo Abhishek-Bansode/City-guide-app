@@ -20,11 +20,14 @@ import java.util.ArrayList;
 
 public class UserDashboard extends AppCompatActivity {
 
-    RecyclerView featuredRecycler;
-    RecyclerView mostViewedRecycler;
-    RecyclerView categoriesRecycler;
+    RecyclerView featuredRecycler,mostViewedRecycler, categoriesRecycler;
+
+    private GradientDrawable gradient1, gradient2, gradient3, gradient4;
 
     RecyclerView.Adapter adapter;
+
+    public UserDashboard() {
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +48,12 @@ public class UserDashboard extends AppCompatActivity {
 
     private void categoriesRecycler() {
 
-        //All Gradients for this view are
+        // All Gradients for this view are
 
-        GradientDrawable gradient1 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xff7adccf, 0xff7adccf});
-        GradientDrawable gradient2 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xffd4cbe5, 0xffd4cbe5});
-        GradientDrawable gradient3 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xfff7c59f, 0xFFf7c59f});
-        GradientDrawable gradient4 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xffb8d7f5, 0xffb8d7f5});
+         gradient1 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xff7adccf, 0xff7adccf});
+         gradient2 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xffd4cbe5, 0xffd4cbe5});
+         gradient3 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xfff7c59f, 0xFFf7c59f});
+         gradient4 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xffb8d7f5, 0xffb8d7f5});
 
 
         ArrayList<CategoriesHelperClass> categoriesHelperClasses = new ArrayList<>();
@@ -100,8 +103,5 @@ public class UserDashboard extends AppCompatActivity {
 
         adapter = new FeaturedAdapter(featuredLocations);
         featuredRecycler.setAdapter(adapter);
-
-
     }
-
 }
