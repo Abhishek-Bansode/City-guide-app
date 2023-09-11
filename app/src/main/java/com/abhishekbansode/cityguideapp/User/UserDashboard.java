@@ -16,6 +16,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.abhishekbansode.cityguideapp.Common.LogInSignUp.RetailerStartUpScreen;
 import com.abhishekbansode.cityguideapp.HelperClasses.HomeAdapter.CategoriesAdapter;
 import com.abhishekbansode.cityguideapp.HelperClasses.HomeAdapter.CategoriesHelperClass;
 import com.abhishekbansode.cityguideapp.HelperClasses.HomeAdapter.FeaturedAdapter;
@@ -194,6 +195,12 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
 
         adapter = new FeaturedAdapter(featuredLocations);
         featuredRecycler.setAdapter(adapter);
+    }
+
+
+    // Normal functions
+    public void CallRetailerScreen(View view) {
+        startActivity(new Intent(getApplicationContext(), RetailerStartUpScreen.class));
     }
 
 }
