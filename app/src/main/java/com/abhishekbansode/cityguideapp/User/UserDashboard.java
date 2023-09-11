@@ -1,6 +1,6 @@
 package com.abhishekbansode.cityguideapp.User;
 
-import android.graphics.RenderNode;
+import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -125,6 +125,14 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.nav_all_categories:
+                startActivity(new Intent(getApplicationContext(),AllCategories.class));
+                break;
+        }
+
+
         return true;
     }
 

@@ -14,6 +14,9 @@
         android:theme="@style/Theme.CityGuideApp"
         tools:targetApi="31">
         <activity
+            android:name=".User.AllCategories"
+            android:exported="false" />
+        <activity
             android:name=".Common.OnBoarding"
             android:exported="false" />
         <activity
@@ -30,10 +33,6 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-        <!-- un comment this line if any error occurred
-        <activity android:name=".User.OnBoarding" />
-        -->
-
     </application>
 
 </manifest>
