@@ -36,11 +36,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
             android:fontFamily="@font/muli_extralight"
             android:text="@string/retailer_tag_line"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:layout_marginBottom="20dp"
             android:textSize="24sp" />
 
 
@@ -54,12 +54,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
-                android:onClick="CallLogInScreen"
                 android:background="@color/primary_color"
+                android:onClick="CallLogInScreen"
                 android:text="@string/login"
                 android:textColor="@color/black"
-                tools:ignore="ButtonStyle"
-                android:transitionName="transition_login"/>
+                android:transitionName="transition_login"
+                tools:ignore="ButtonStyle" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/signUp_btn"
@@ -68,6 +68,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_weight="1"
                 android:background="@color/primary_color"
+                android:onClick="CallSignUpScreen"
                 android:text="@string/sign_up" />
 
         </LinearLayout>

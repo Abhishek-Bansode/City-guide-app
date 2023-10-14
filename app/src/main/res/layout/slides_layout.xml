@@ -10,13 +10,13 @@
         android:layout_height="400dp"
         android:layout_gravity="center"
 
-        android:padding="20dp"
+        android:contentDescription="@string/img_holder"
 
+        android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/sit_back_and_relax"
-        android:contentDescription="@string/img_holder" />
+        app:srcCompat="@drawable/sit_back_and_relax" />
 
     <TextView
         android:id="@+id/slider_heading"

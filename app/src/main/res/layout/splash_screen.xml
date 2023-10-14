@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Common.SplashScreen"
-    android:background="@color/primary_color">
+    android:background="@color/primary_color"
+    tools:context=".Common.SplashScreen">
 
     <ImageView
         android:id="@+id/background_img"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/splash_screen_img2"
-        android:contentDescription="@string/backImage" />
+        android:contentDescription="@string/backImage"
+        android:src="@drawable/splash_screen_img2" />
 
     <TextView
         android:id="@+id/powered_by"

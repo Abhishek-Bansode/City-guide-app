@@ -94,9 +94,9 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
             app:cardBackgroundColor="#00000000"
-            app:cardElevation="8dp"
-            android:layout_margin="20dp">
+            app:cardElevation="8dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -166,10 +166,7 @@
                     android:background="#00000000"
                     android:padding="20dp"
                     android:text="expand all"
-                    android:textColor="@color/white"/>
-
-
-
+                    android:textColor="@color/white" />
 
 
             </RelativeLayout>
@@ -186,9 +183,9 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
             app:cardBackgroundColor="#00000000"
-            app:cardElevation="8dp"
-            android:layout_margin="20dp">
+            app:cardElevation="8dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -226,7 +223,6 @@
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
-
 
 
         <RelativeLayout
@@ -273,9 +269,9 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
             app:cardBackgroundColor="#00000000"
-            app:cardElevation="8dp"
-            android:layout_margin="20dp">
+            app:cardElevation="8dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -343,7 +339,7 @@
                     android:background="#00000000"
                     android:padding="20dp"
                     android:text="expand all"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white" />
 
 
             </RelativeLayout>
@@ -360,9 +356,9 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
             app:cardBackgroundColor="#00000000"
-            app:cardElevation="8dp"
-            android:layout_margin="20dp">
+            app:cardElevation="8dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
