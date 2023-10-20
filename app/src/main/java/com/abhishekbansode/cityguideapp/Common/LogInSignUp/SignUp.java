@@ -15,6 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.abhishekbansode.cityguideapp.R;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.Objects;
+
 public class SignUp extends AppCompatActivity {
 
     // Variables
@@ -41,29 +43,33 @@ public class SignUp extends AppCompatActivity {
         userName = findViewById(R.id.signup_username);
         email = findViewById(R.id.signup_email2);
         password = findViewById(R.id.signup_password);
+
+
+        // calling SignUpScreen2 by next button
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!validateFullName() | !validateEmail() | !validateUsername() | !validatePassword()) {
+                    return;
+                }
+
+//                Intent intent = new Intent(getApplicationContext(), SignUp2Class.class);
+                Intent intent = new Intent(getApplicationContext(), SignUp2ndClass.class);
+
+                // Add transition
+                Pair[] pairs = new Pair[4];
+
+                pairs[0] = new Pair<View, String>(backBtn, "transition_back_arrow_btn");
+                pairs[1] = new Pair<View, String>(next, "transition_next_btn");
+                pairs[2] = new Pair<View, String>(login, "transition_login_btn");
+                pairs[3] = new Pair<View, String>(titleText, "transition_title_text");
+
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp.this, pairs);
+                startActivity(intent, options.toBundle());
+            }
+        });
     }
 
-    public void callNextSignUp(View view) {
-        if (!validateFullName() || !validateEmail() || !validateUsername() || !validatePassword()) {
-            return;
-        }
-
-        // Add Transition and call next activity
-        Pair[] pairs = new Pair[4];
-
-        pairs[0] = new Pair<View, String>(backBtn, "transition_back_arrow_btn");
-        pairs[1] = new Pair<View, String>(next, "transition_next_btn");
-        pairs[2] = new Pair<View, String>(login, "transition_login_btn");
-        pairs[3] = new Pair<View, String>(titleText, "transition_title_text");
-
-        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp.this, pairs);
-
-    }
-
-    public void callNextSignUpScreen(View view) {
-        Intent intent = new Intent(getApplicationContext(), SignUp2Class.class);
-        startActivity(intent);
-    }
 
     private boolean validateFullName() {
         String val = fullName.getEditText().getText().toString().trim();
@@ -78,13 +84,13 @@ public class SignUp extends AppCompatActivity {
     }
 
     private boolean validateUsername() {
-        String val = userName.getEditText().getText().toString().trim();
-        String checkspaces = "Aw{1,20}z";
+        String val = Objects.requireNonNull(userName.getEditText()).getText().toString().trim();
+        String checkspaces = "\\A\\w{4,20}\\z";
         if (val.isEmpty()) {
             userName.setError("Field can not be Empty");
             return false;
-        } else if (val.length() > 20) {
-            userName.setError("Username is too large!");
+        } else if (val.length() >= 15) {
+            userName.setError("Username is too long!");
             return false;
         } else if (!val.matches(checkspaces)) {
             userName.setError("No whitespaces are allowed!");
@@ -97,8 +103,8 @@ public class SignUp extends AppCompatActivity {
     }
 
     private boolean validateEmail() {
-        String val = email.getEditText().getText().toString().trim();
-        String checkEmail = "[a-zA-Z0-9._-]+@[a-z]+.+[a-z]+";
+        String val = Objects.requireNonNull(email.getEditText()).getText().toString().trim();
+        String checkEmail = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
         if (val.isEmpty()) {
             email.setError("Field can not be Empty");
             return false;
@@ -115,19 +121,19 @@ public class SignUp extends AppCompatActivity {
     private boolean validatePassword() {
         String val = password.getEditText().getText().toString().trim();
         String checkPassword = "^" +
-                //"(?=.*[0-9])" +           //at least 1 digit
-                //"(?=.*[a-z])" +           //at least 1 lower case letter
-                //"(?=.*[A-Z])" +           //at least 1 upper case letter
-                "(?=.*[a-zA-Z])" +          //any letter
-                //"(?=.*[@#$%^&+=])" +      //at least 1 special character
-                "(?=S+$)" +                 //no white spaces
-                ".{4,}" +                   //at least 4 characters
+                //"(?=.*[0-9])" +         //at least 1 digit
+                //"(?=.*[a-z])" +         //at least 1 lower case letter
+                //"(?=.*[A-Z])" +         //at least 1 upper case letter
+                "(?=.*[a-zA-Z])" +      //any letter
+                "(?=.*[@#$%^&+=])" +    //at least 1 special character
+                "(?=\\S+$)" +           //no white spaces
+                ".{4,}" +               //at least 4 characters
                 "$";
         if (val.isEmpty()) {
-            email.setError("Field can not be Empty");
+            password.setError("Field can not be empty");
             return false;
         } else if (!val.matches(checkPassword)) {
-            password.setError("Password should contain four characters!");
+            password.setError("Password should contain 4 characters!");
             return false;
         } else {
             password.setError(null);

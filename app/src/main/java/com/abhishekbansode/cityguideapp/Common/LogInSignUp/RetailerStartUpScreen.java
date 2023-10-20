@@ -14,9 +14,7 @@ import com.abhishekbansode.cityguideapp.R;
 import kotlin.Pair;
 
 public class RetailerStartUpScreen extends AppCompatActivity {
-
     Button signup;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +34,6 @@ public class RetailerStartUpScreen extends AppCompatActivity {
 //        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(RetailerStartUpScreen.this,Login.class,"transition_login");
 
         startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
-
     }
 
     public void CallSignUpScreen(View view) {

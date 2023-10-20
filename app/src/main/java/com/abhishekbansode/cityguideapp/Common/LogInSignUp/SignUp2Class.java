@@ -26,8 +26,8 @@ public class SignUp2Class extends AppCompatActivity {
 
     // Variables
     ImageView backBtn;
-    Button next, login;
-    TextView titleText, slideText;
+    Button nextBtn, loginBtn;
+    TextView titleText;
     RadioGroup radioGroup;
     RadioButton selectGender;
     DatePicker datePicker;
@@ -40,40 +40,45 @@ public class SignUp2Class extends AppCompatActivity {
 
         // Hooks
         backBtn = findViewById(R.id.signup_back_button);
-        next = findViewById(R.id.signup_next_button_page2);
-        login = findViewById(R.id.signup_login_button);
+        nextBtn = findViewById(R.id.signup_next_button_page2);
+        loginBtn = findViewById(R.id.signup_login_button);
         titleText = findViewById(R.id.signup_title_text);
-//        slideText = findViewById(R.id.);
         radioGroup = findViewById(R.id.radio_group);
         datePicker = findViewById(age_picker);
+
+        // calling SignUpScreen3 by next button
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!validateAge() | !validateGender()) {
+                    return;
+                }
+
+                Intent intent = new Intent(getApplicationContext(), SignUp3Class.class);
+
+                selectGender = findViewById(radioGroup.getCheckedRadioButtonId());
+                String gender = selectGender.getText().toString();
+
+                int day = datePicker.getDayOfMonth();
+                int month = datePicker.getMonth();
+                int year = datePicker.getYear();
+
+                String date = day + "/" + month + "/" + year;
+
+                // Add transition
+                Pair[] pairs = new Pair[4];
+                pairs[0] = new Pair<View, String>(backBtn, "transition_back_arrow_btn");
+                pairs[1] = new Pair<View, String>(nextBtn, "transition_next_btn");
+                pairs[2] = new Pair<View, String>(loginBtn, "transition_login_btn");
+                pairs[3] = new Pair<View, String>(titleText, "transition_title_text");
+
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp2Class.this, pairs);
+                startActivity(intent, options.toBundle());
+            }
+        });
     }
 
-    public void callNextSignUp2(View view) {
-        if(!validateAge() | !validateGender()) {
-            return;
-        }
-        selectGender = findViewById(radioGroup.getCheckedRadioButtonId());
-        String gender = selectGender.getText().toString();
 
-        int day = datePicker.getDayOfMonth();
-        int month = datePicker.getMonth();
-        int year = datePicker.getYear();
-
-        String date = day + "/" + month + "/" + year;
-
-        Intent intent = new Intent(getApplicationContext(), SignUp3Class.class);
-
-        // Add Transitions and call next activity
-        Pair[] pairs = new Pair[5];
-        pairs[0] = new Pair(backBtn, "transition_back_arrow_btn");
-        pairs[1] = new Pair(next, "transition_next_btn");
-        pairs[2] = new Pair(login, "transition_login_btn");
-        pairs[3] = new Pair(titleText, "transition_title_text");
-        pairs[4] = new Pair(slideText, "transition_slide_text");
-
-        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp2Class.this, pairs);
-        startActivity(intent, options.toBundle());
-    }
 
     private boolean validateGender() {
         if(radioGroup.getCheckedRadioButtonId() == -1) {
@@ -95,5 +100,10 @@ public class SignUp2Class extends AppCompatActivity {
         } else {
             return true;
         }
+    }
+
+    public void TestingNextSceen(View view) {
+        Intent intent = new Intent(getApplicationContext(), SignUp3Class.class);
+        startActivity(intent);
     }
 }

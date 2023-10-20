@@ -14,13 +14,13 @@
         android:theme="@style/Theme.CityGuideApp"
         tools:targetApi="31">
         <activity
+            android:name=".Common.LogInSignUp.SignUp2ndClass"
+            android:exported="false" />
+        <activity
             android:name=".Common.LogInSignUp.VerifyOTP"
             android:exported="false" />
         <activity
             android:name=".Common.LogInSignUp.SetNewPassword"
-            android:exported="false" />
-        <activity
-            android:name=".Common.LogInSignUp.ForgetPasswordSuccess"
             android:exported="false" />
         <activity
             android:name=".Common.LogInSignUp.ForgetPasswordSuccessMessage"
