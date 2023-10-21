@@ -22,7 +22,7 @@ public class SignUp extends AppCompatActivity {
     // Variables
     TextInputLayout fullName, userName, email, password;
     ImageView backBtn;
-    Button next, login;
+    Button nextBtn1, login;
     TextView titleText;
 
 
@@ -34,7 +34,7 @@ public class SignUp extends AppCompatActivity {
 
         // hooks
         backBtn = findViewById(R.id.signup_back_button);
-        next = findViewById(R.id.signup_next_button_page1);
+        nextBtn1 = findViewById(R.id.signup_next_button_page1);
         login = findViewById(R.id.signup_login_button);
         titleText = findViewById(R.id.signup_title_text);
 
@@ -45,34 +45,47 @@ public class SignUp extends AppCompatActivity {
         password = findViewById(R.id.signup_password);
 
 
-        // calling SignUpScreen2 by next button
-        next.setOnClickListener(new View.OnClickListener() {
+        /*
+        *  nextBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!validateFullName() | !validateEmail() | !validateUsername() | !validatePassword()) {
                     return;
                 }
+        *
+        * */
 
-//                Intent intent = new Intent(getApplicationContext(), SignUp2Class.class);
-                Intent intent = new Intent(getApplicationContext(), SignUp2ndClass.class);
 
-                // Add transition
-                Pair[] pairs = new Pair[4];
+        // calling SignUpScreen2 by next button
+        nextBtn1.setOnClickListener(view -> {
+            if(!validateFullName() | !validateEmail() | !validateUsername() | !validatePassword()) {
+                return;
+            }
+            Intent intent = new Intent(SignUp.this, SignUp2Class.class);
 
-                pairs[0] = new Pair<View, String>(backBtn, "transition_back_arrow_btn");
-                pairs[1] = new Pair<View, String>(next, "transition_next_btn");
-                pairs[2] = new Pair<View, String>(login, "transition_login_btn");
-                pairs[3] = new Pair<View, String>(titleText, "transition_title_text");
+            // Add transition
+            Pair[] pairs = new Pair[4];
 
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp.this, pairs);
-                startActivity(intent, options.toBundle());
+            pairs[0] = new Pair<View, String>(backBtn, "transition_back_arrow_btn");
+            pairs[1] = new Pair<View, String>(nextBtn1, "transition_next_btn");
+            pairs[2] = new Pair<View, String>(login, "transition_login_btn");
+            pairs[3] = new Pair<View, String>(titleText, "transition_title_text");
+
+            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp.this, pairs);
+            startActivity(intent, options.toBundle());
+        });
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), RetailerStartUpScreen.class);
+                startActivity(intent);
             }
         });
     }
 
-
     private boolean validateFullName() {
-        String val = fullName.getEditText().getText().toString().trim();
+        String val = Objects.requireNonNull(fullName.getEditText()).getText().toString().trim();
         if (val.isEmpty()) {
             fullName.setError("Field can not be empty");
             return false;

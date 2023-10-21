@@ -1,14 +1,18 @@
 package com.abhishekbansode.cityguideapp.Common.LogInSignUp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.abhishekbansode.cityguideapp.Databases.UserHelperClass;
 import com.abhishekbansode.cityguideapp.R;
 import com.chaos.view.PinView;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,15 +24,20 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.concurrent.TimeUnit;
 
 public class VerifyOTP extends AppCompatActivity {
 
+    // Variables
+    Button verifyOTPBtn;
+    ImageView crossBtn;
     PinView pinFromUser;
     String codeBySystem;
     TextView otpDescriptionText;
-    String fullname, phoneNo, email, username, password, date, gender, whatToDo;
+    String fullName, phoneNo, email, username, password, date, gender, whatToDo;
     private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +48,44 @@ public class VerifyOTP extends AppCompatActivity {
         // Hooks
         pinFromUser = findViewById(R.id.pin_view);
         otpDescriptionText = findViewById(R.id.otp_description_text);
+        verifyOTPBtn = findViewById(R.id.verify_btn);
+        crossBtn = findViewById(R.id.back_to_signup_page);
+
+         fullName = getIntent().getStringExtra("fullName");
+         email = getIntent().getStringExtra("email");
+         username = getIntent().getStringExtra("username");
+         password = getIntent().getStringExtra("password");
+         date = getIntent().getStringExtra("date");
+         gender = getIntent().getStringExtra("gender");
+         phoneNo = getIntent().getStringExtra("phoneNo");
+
+
+
+        // on clicking verify button
+        verifyOTPBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String code = pinFromUser.getText().toString();
+                if(!code.isEmpty()) {
+                    verifyCode(code);
+                }
+            }
+        });
+
+        // button for navigating back to SignUp page
+        crossBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SignUp.class);
+                startActivity(intent);
+            }
+        });
 
         // Initialize the FireBase Auth
         mAuth = FirebaseAuth.getInstance();
 
         // Get all data from intent
-        fullname = getIntent().getStringExtra("fullName");
+        fullName = getIntent().getStringExtra("fullName");
         email = getIntent().getStringExtra("email");
         username = getIntent().getStringExtra("username");
         password = getIntent().getStringExtra("password");
@@ -109,7 +150,9 @@ public class VerifyOTP extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Toast.makeText(VerifyOTP.this, "Verification Completed.", Toast.LENGTH_SHORT).show();
+
+                            storeNewUserData();
+
                         } else {
                             // Sign in failed, display a message and update the UI
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
@@ -121,15 +164,23 @@ public class VerifyOTP extends AppCompatActivity {
                 });
     }
 
-    // first check call and then redirect user accordingly to the Profile or to set new password screen
-    public void callNextScreenFromOTP(View view) {
-        String code = pinFromUser.getText().toString();
-        if(!code.isEmpty()) {
-            verifyCode(code);
-        }
+    private void storeNewUserData() {
+        FirebaseDatabase rootNode = FirebaseDatabase.getInstance();
+        DatabaseReference reference = rootNode.getReference("Users");
+
+        UserHelperClass addNewUser = new UserHelperClass(fullName, phoneNo, email, username, password, date, gender);
+
+        reference.child(phoneNo).setValue(addNewUser);
     }
 
-    public void goToHomeOTP(View view) {
+//    // first check call and then redirect user accordingly to the Profile or to set new password screen
+//    public void callNextScreenFromOTP(View view) {
+//        String code = pinFromUser.getText().toString();
+//        if(!code.isEmpty()) {
+//            verifyCode(code);
+//        }
+//    }
 
+    public void goToHomeOTP(View view) {
     }
 }

@@ -2,10 +2,8 @@ package com.abhishekbansode.cityguideapp.Common.LogInSignUp;
 
 import static com.abhishekbansode.cityguideapp.R.id.age_picker;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Pair;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -26,7 +24,7 @@ public class SignUp2Class extends AppCompatActivity {
 
     // Variables
     ImageView backBtn;
-    Button nextBtn, loginBtn;
+    Button nextBtn2, loginBtn;
     TextView titleText;
     RadioGroup radioGroup;
     RadioButton selectGender;
@@ -40,45 +38,63 @@ public class SignUp2Class extends AppCompatActivity {
 
         // Hooks
         backBtn = findViewById(R.id.signup_back_button);
-        nextBtn = findViewById(R.id.signup_next_button_page2);
+        nextBtn2 = findViewById(R.id.signup_next_button_page2);
         loginBtn = findViewById(R.id.signup_login_button);
         titleText = findViewById(R.id.signup_title_text);
         radioGroup = findViewById(R.id.radio_group);
         datePicker = findViewById(age_picker);
 
-        // calling SignUpScreen3 by next button
-        nextBtn.setOnClickListener(new View.OnClickListener() {
+        /*
+ calling SignUpScreen3 by next button
+        nextBtn2.setOnClickListener(view -> {
+            if(!validateAge() | !validateGender()) {
+                return;
+            }
+
+            selectGender = findViewById(radioGroup.getCheckedRadioButtonId());
+            String gender = selectGender.getText().toString();
+
+            int day = datePicker.getDayOfMonth();
+            int month = datePicker.getMonth();
+            int year = datePicker.getYear();
+
+            String date = day + "/" + month + "/" + year;
+
+            // Add transition
+            Pair[] pairs = new Pair[4];
+            pairs[0] = new Pair<View, String>(backBtn, "transition_back_arrow_btn");
+            pairs[1] = new Pair<View, String>(nextBtn2, "transition_next_btn");
+            pairs[2] = new Pair<View, String>(loginBtn, "transition_login_btn");
+            pairs[3] = new Pair<View, String>(titleText, "transition_title_text");
+
+            Intent intent = new Intent(SignUp2Class.this, SignUp3Class.class);
+
+            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp2Class.this, pairs);
+            startActivity(intent, options.toBundle());
+
+        });
+*/
+
+        // this intent is not working properly
+        // as this does not navigating to SignUp3Class.java
+        // so, the work flow is stopped for OTP screen and database also
+        nextBtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!validateAge() | !validateGender()) {
-                    return;
-                }
+                Intent intent = new Intent(SignUp2Class.this, SignUp3Class.class);
+                startActivity(intent);
+            }
+        });
 
-                Intent intent = new Intent(getApplicationContext(), SignUp3Class.class);
 
-                selectGender = findViewById(radioGroup.getCheckedRadioButtonId());
-                String gender = selectGender.getText().toString();
-
-                int day = datePicker.getDayOfMonth();
-                int month = datePicker.getMonth();
-                int year = datePicker.getYear();
-
-                String date = day + "/" + month + "/" + year;
-
-                // Add transition
-                Pair[] pairs = new Pair[4];
-                pairs[0] = new Pair<View, String>(backBtn, "transition_back_arrow_btn");
-                pairs[1] = new Pair<View, String>(nextBtn, "transition_next_btn");
-                pairs[2] = new Pair<View, String>(loginBtn, "transition_login_btn");
-                pairs[3] = new Pair<View, String>(titleText, "transition_title_text");
-
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp2Class.this, pairs);
-                startActivity(intent, options.toBundle());
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SignUp.class);
+                startActivity(intent);
             }
         });
     }
-
-
 
     private boolean validateGender() {
         if(radioGroup.getCheckedRadioButtonId() == -1) {
@@ -100,10 +116,5 @@ public class SignUp2Class extends AppCompatActivity {
         } else {
             return true;
         }
-    }
-
-    public void TestingNextSceen(View view) {
-        Intent intent = new Intent(getApplicationContext(), SignUp3Class.class);
-        startActivity(intent);
     }
 }

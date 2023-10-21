@@ -14,8 +14,10 @@
         android:padding="30dp">
 
         <ImageView
+            android:id="@+id/back_to_signup_page"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/back_to_signup_page"
             android:padding="5dp"
             android:src="@drawable/general_close_icon" />
 
@@ -38,7 +40,7 @@
             android:layout_gravity="center"
             android:fontFamily="@font/muli_bold"
             android:includeFontPadding="false"
-            android:text="Verification"
+            android:text="@string/verification"
             android:textAllCaps="true"
             android:textColor="@color/black"
             android:textSize="25sp"
@@ -52,7 +54,7 @@
             android:layout_marginTop="50dp"
             android:fontFamily="@font/muli_bold"
             android:includeFontPadding="false"
-            android:text="Enter one time password sent on your Phone"
+            android:text="@string/enter_one_time_password_sent_on_your_phone"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
@@ -76,13 +78,14 @@
             app:lineWidth="1dp" />
 
 
-        <Button
-            android:layout_width="match_parent"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/verify_btn"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:background="@color/colorPrimary"
-            android:text="Verify code"
-            android:onClick="callNextScreenFromOTP"
+            android:text="@string/verify_code"
             android:textColor="@color/black" />
 
 

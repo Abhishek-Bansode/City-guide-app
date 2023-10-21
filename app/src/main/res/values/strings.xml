@@ -82,5 +82,21 @@
     <string name="enter_full_name">Full Name</string>
     <string name="otp_code_text">Co\nde</string>
     <string name="title_activity_map">MapActivity</string>
+    <string name="back_arrow_btn_img">Back-Arrow-Btn-img</string>
+    <string name="email">Email</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="username">Username</string>
+    <string name="choose_gender">Choose Gender</string>
+    <string name="select_your_age">Select Your Age</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="others">Others</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="verify_code">Verify code</string>
+    <string name="verification">Verification</string>
+    <string name="enter_one_time_password_sent_on_your_phone">Enter one time password sent on your Phone</string>
+    <string name="back_to_signup_page">Back to SignUp Page</string>
+    <string name="create_account">Create Account</string>
+    <string name="back_to_retailers_screen">Back to Retailers Screen</string>
 
 </resources>
