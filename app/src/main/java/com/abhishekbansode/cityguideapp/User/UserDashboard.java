@@ -1,5 +1,6 @@
 package com.abhishekbansode.cityguideapp.User;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
@@ -8,8 +9,11 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -35,7 +39,7 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
     static final float END_SCALE = 0.5f;
     RecyclerView featuredRecycler, mostViewedRecycler, categoriesRecycler;
     private GradientDrawable gradient1, gradient2, gradient3, gradient4;
-    ImageView menuIcon;
+    ImageView menuIcon, userLogInSignUpIcon;
 
     // Drawer Menu
     DrawerLayout drawerLayout;
@@ -58,6 +62,8 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
         categoriesRecycler = findViewById(R.id.categories_recycler1);
         menuIcon = findViewById(R.id.menu_icon);
         contentView = findViewById(R.id.content);
+        userLogInSignUpIcon = findViewById(R.id.userLogInIcon);
+
 
         // Menu Hooks
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -69,6 +75,51 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
         featuredRecycler();
         mostViewedRecycler();
         categoriesRecycler();
+
+
+        // ON Click -> CallRetailerScreen
+        userLogInSignUpIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), RetailerStartUpScreen.class));
+            }
+        });
+
+        // backPressed on main activity
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                // creating alert
+                AlertDialog.Builder exitDialog = new AlertDialog.Builder(UserDashboard.this);
+
+                exitDialog.setTitle("Exit?");
+                exitDialog.setMessage("Are you sure want to exit?");
+                exitDialog.setIcon(R.drawable.exit_from_app);
+
+                exitDialog.setPositiveButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(UserDashboard.this, "Welcome back!", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                exitDialog.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        // Back is pressed... Finishing the activity
+                        finish();
+                    }
+                });
+                
+                exitDialog.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(UserDashboard.this, "Operation Cancelled!", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                exitDialog.show();
+            }
+        });
     }
 
     // Navigation Drawer Functions
@@ -116,13 +167,13 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
 
     }
 
-    @Override
-    public void onBackPressed() {
-        if (drawerLayout.isDrawerVisible(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START);
-        } else
-            super.onBackPressed();
-    }
+//    @Override
+//    public void onBackPressed() {
+//        if (drawerLayout.isDrawerVisible(GravityCompat.START)) {
+//            drawerLayout.closeDrawer(GravityCompat.START);
+//        } else
+//            super.onBackPressed();
+//    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {

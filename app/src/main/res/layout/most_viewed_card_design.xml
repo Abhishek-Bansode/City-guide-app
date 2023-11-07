@@ -24,9 +24,9 @@
             android:id="@+id/mv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/mv_image"
-            android:fontFamily="@font/baloo"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/mv_image"
+            android:fontFamily="@font/roboto_bold"
             android:text="@string/mcdonalds_1"
             android:textSize="20sp"
             tools:ignore="HardcodedText" />

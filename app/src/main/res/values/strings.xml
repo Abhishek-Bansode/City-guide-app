@@ -98,5 +98,33 @@
     <string name="back_to_signup_page">Back to SignUp Page</string>
     <string name="create_account">Create Account</string>
     <string name="back_to_retailers_screen">Back to Retailers Screen</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="search_icon">Search Icon</string>
+    <string name="categories_car_img">Categories Car Img</string>
+    <string name="food_img">Food Img</string>
+    <string name="doctor_img">Doctor Img</string>
+    <string name="friday_offer_img">Friday Offer Img</string>
+    <string name="provide_your_account_s_email_for_which_you_want_to_reset_your_password">Provide your account\'s email for which you want to reset your password</string>
+    <string name="next">Next</string>
+    <string name="password_updated">Password Updated</string>
+    <string name="done_icon_image">Done Icon Image</string>
+    <string name="your_password_has_been_updated_successfully">Your password has been updated Successfully</string>
+    <string name="make_selection">Make Selection</string>
+    <string name="select_which_contact_detail_should_we_use_to_reset_your_password">Select which contact detail should we use to reset your password</string>
+    <string name="mobile_icon_image">Mobile Icon Image</string>
+    <string name="via_sms">Via Sms</string>
+    <string name="_4753388744">+4753388744</string>
+    <string name="sms_icon_image">SMS Icon Image</string>
+    <string name="via_email">Via Email</string>
+    <string name="support_gmail_com">support@gmail.com</string>
+    <string name="bold_circle_image">Bold Circle Image</string>
+    <string name="password_icon_image">Password Icon Image</string>
+    <string name="new_credentials">New Credentials</string>
+    <string name="your_identity_has_been_verified_set_your_new_password">Your identity has been verified! Set your new password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="ok">OK</string>
+    <string name="menu_icon_image">Menu Icon Image</string>
+    <string name="bicycle_image">Bicycle Image</string>
 
 </resources>

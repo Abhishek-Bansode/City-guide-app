@@ -28,7 +28,7 @@ import com.hbb20.CountryCodePicker;
 public class Login extends AppCompatActivity {
 
     // variables
-    Button logInBtn;
+    Button logInBtn, forgetPasswordBtn;
     CountryCodePicker countryCodePicker;
     TextInputLayout phoneNumber, password;
     ProgressBar progressbar;
@@ -41,6 +41,7 @@ public class Login extends AppCompatActivity {
 
         // hooks
         logInBtn = findViewById(R.id.letTheUserLogin);
+        forgetPasswordBtn = findViewById(R.id.login_forget_password);
         phoneNumber = findViewById(R.id.login_phone_number);
         password = findViewById(R.id.login_password);
         progressbar = findViewById(R.id.login_progress_bar);
@@ -49,7 +50,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(!isConnected((Login) getApplicationContext())) {
+                if (!isConnected((Login) getApplicationContext())) {
                     showCustomDialog();
                 }
 
@@ -111,6 +112,14 @@ public class Login extends AppCompatActivity {
             }
         });
 
+        // function to call the forget password screen
+        forgetPasswordBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ForgetPassword.class));
+            }
+        });
+
     }
 
 
@@ -121,7 +130,7 @@ public class Login extends AppCompatActivity {
         NetworkInfo wifiConn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
         NetworkInfo mobileConn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 
-        if((wifiConn != null && wifiConn.isConnected()) || (mobileConn != null && mobileConn.isConnected())) {
+        if ((wifiConn != null && wifiConn.isConnected()) || (mobileConn != null && mobileConn.isConnected())) {
             return true;
         } else {
             return false;
@@ -153,6 +162,7 @@ public class Login extends AppCompatActivity {
         startActivity(intent);
     }
 
+    // fields validations
     private boolean validateFields() {
         String _phoneNumber = phoneNumber.getEditText().getText().toString().trim();
         String _password = password.getEditText().getText().toString().trim();

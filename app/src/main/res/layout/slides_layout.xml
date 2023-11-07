@@ -25,7 +25,7 @@
         android:layout_marginStart="181dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="172dp"
-        android:fontFamily="@font/brandon_grotesque_black"
+        android:fontFamily="sans-serif-black"
         android:gravity="center"
         android:text="@string/first_slide_title"
         android:textSize="30sp"

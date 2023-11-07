@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/muli_bold"
+            android:fontFamily="@font/poppins_bold"
             android:text="@string/crate_account"
             android:textAllCaps="true"
             android:textColor="@color/black"
@@ -159,7 +159,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/black_border"
             android:elevation="5dp"
-            android:fontFamily="@font/muli_bold"
+            android:fontFamily="@font/poppins_medium"
             android:text="@string/login"
             android:textColor="@color/black"
             android:transitionName="transition_login_btn" />

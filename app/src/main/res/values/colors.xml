@@ -25,15 +25,15 @@
     <color name="banner_background_light">#56F1E9CE</color>
 
     <!--card colors-->
-    <color name="card1">#d4cbe5</color>
-    <color name="card2">#7adccf</color>
-    <color name="card3">#f7c59f</color>
-    <color name="card4">#b8d7f5</color>
+    <!--    <color name="card1">#d4cbe5</color>-->
+    <!--    <color name="card2">#7adccf</color>-->
+    <!--    <color name="card3">#f7c59f</color>-->
+    <!--    <color name="card4">#b8d7f5</color>-->
 
     <!--card colors-->
-    <color name="card1_3">#3B7197</color>
-    <color name="card2_3">#4A8DB7</color>
-    <color name="card3_3">#74BDE0</color>
-    <color name="card4_3">#A1E1FA</color>
+    <color name="card1">#FFC5A1</color>
+    <color name="card2">#92D8B8</color>
+    <color name="card3">#FFABAB</color>
+    <color name="card4">#A1BCEC</color>
 
 </resources>

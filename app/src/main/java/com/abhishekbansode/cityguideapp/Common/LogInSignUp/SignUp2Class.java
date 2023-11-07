@@ -78,19 +78,19 @@ public class SignUp2Class extends AppCompatActivity {
         // this intent is not working properly
         // as this does not navigating to SignUp3Class.java
         // so, the work flow is stopped for OTP screen and database also
-        nextBtn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SignUp2Class.this, SignUp3Class.class);
-                startActivity(intent);
-            }
-        });
+//        nextBtn2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(SignUp2Class.this, SignUp3Class.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SignUp.class);
+                Intent intent = new Intent(SignUp2Class.this, SignUp.class);
                 startActivity(intent);
             }
         });
@@ -116,5 +116,12 @@ public class SignUp2Class extends AppCompatActivity {
         } else {
             return true;
         }
+    }
+
+
+    // for testing only
+    public void CallToSignUP3CallScreen(View view) {
+        Intent intent = new Intent(SignUp2Class.this, SignUp3Class.class);
+        startActivity(intent);
     }
 }

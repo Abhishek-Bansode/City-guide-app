@@ -24,6 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:contentDescription="@string/back_arrow_btn_img"
                 android:padding="15dp"
                 android:src="@drawable/general_back_icon" />
 
@@ -32,6 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
+                android:contentDescription="@string/search_icon"
                 android:padding="15dp"
                 android:src="@drawable/search_icon" />
 
@@ -41,7 +43,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/brandon_grotesque_black"
+            android:fontFamily="sans-serif-black"
             android:padding="10dp"
             android:text="@string/categories"
             android:textAllCaps="true"
@@ -66,7 +68,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/baloo"
+                    android:fontFamily="@font/roboto_bold"
                     android:padding="25dp"
                     android:text="@string/car_rent"
                     android:textSize="30sp" />
@@ -87,6 +89,7 @@
                 android:layout_height="150dp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="-40dp"
+                android:contentDescription="@string/categories_car_img"
                 android:src="@drawable/categories_rent_car_icon" />
 
         </RelativeLayout>
@@ -108,13 +111,14 @@
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="20dp"
+                    android:contentDescription="@string/food_img"
                     android:src="@drawable/categories_restaurant_icon" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:fontFamily="@font/baloo"
+                    android:fontFamily="@font/roboto_bold"
                     android:padding="25dp"
                     android:text="@string/restaurants"
                     android:textColor="@color/white"
@@ -123,11 +127,11 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:text="expand all"
+                    android:text="@string/expand_all"
                     android:textColor="@color/white">
 
                 </androidx.appcompat.widget.AppCompatButton>
@@ -153,7 +157,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/baloo"
+                    android:fontFamily="@font/roboto_bold"
                     android:padding="25dp"
                     android:text="@string/hospitals"
                     android:textColor="@color/white"
@@ -165,7 +169,7 @@
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:text="expand all"
+                    android:text="@string/expand_all"
                     android:textColor="@color/white" />
 
 
@@ -176,6 +180,7 @@
                 android:layout_height="150dp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="-15dp"
+                android:contentDescription="@string/doctor_img"
                 android:src="@drawable/hospital_image" />
 
         </RelativeLayout>
@@ -197,13 +202,14 @@
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="20dp"
+                    android:contentDescription="@string/friday_offer_img"
                     android:src="@drawable/categories_shop_icon" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:fontFamily="@font/baloo"
+                    android:fontFamily="@font/roboto_bold"
                     android:padding="25dp"
                     android:text="@string/shops"
                     android:textColor="@color/white"
@@ -212,11 +218,11 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:text="expand all"
+                    android:text="@string/expand_all"
                     android:textColor="@color/white" />
 
 
@@ -241,7 +247,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/baloo"
+                    android:fontFamily="@font/roboto_bold"
                     android:padding="25dp"
                     android:text="@string/car_rent"
                     android:textSize="30sp" />
@@ -252,7 +258,7 @@
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:text="expand all" />
+                    android:text="@string/expand_all" />
 
 
             </RelativeLayout>
@@ -262,6 +268,7 @@
                 android:layout_height="150dp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="-40dp"
+                android:contentDescription="@string/categories_car_img"
                 android:src="@drawable/categories_rent_car_icon" />
 
         </RelativeLayout>
@@ -283,13 +290,14 @@
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="20dp"
+                    android:contentDescription="@string/food_img"
                     android:src="@drawable/categories_restaurant_icon" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:fontFamily="@font/baloo"
+                    android:fontFamily="@font/roboto_bold"
                     android:padding="25dp"
                     android:text="@string/restaurants"
                     android:textColor="@color/white"
@@ -298,11 +306,11 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:text="expand all"
+                    android:text="@string/expand_all"
                     android:textColor="@color/white" />
 
 
@@ -326,7 +334,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/baloo"
+                    android:fontFamily="@font/roboto_bold"
                     android:padding="25dp"
                     android:text="@string/hospitals"
                     android:textColor="@color/white"
@@ -338,7 +346,7 @@
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:text="expand all"
+                    android:text="@string/expand_all"
                     android:textColor="@color/white" />
 
 
@@ -349,6 +357,7 @@
                 android:layout_height="150dp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="-15dp"
+                android:contentDescription="@string/doctor_img"
                 android:src="@drawable/hospital_image" />
 
         </RelativeLayout>
@@ -370,13 +379,14 @@
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="20dp"
+                    android:contentDescription="@string/friday_offer_img"
                     android:src="@drawable/categories_shop_icon" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:fontFamily="@font/baloo"
+                    android:fontFamily="@font/roboto_bold"
                     android:padding="25dp"
                     android:text="@string/shops"
                     android:textColor="@color/white"
@@ -385,11 +395,11 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:padding="20dp"
-                    android:text="expand all"
+                    android:text="@string/expand_all"
                     android:textColor="@color/white" />
 
 

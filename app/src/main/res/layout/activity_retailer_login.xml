@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:fontFamily="@font/muli_bold"
+            android:fontFamily="@font/poppins_bold"
             android:text="@string/login"
             android:textAllCaps="true"
             android:textColor="@color/black"
@@ -93,7 +93,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/black_border"
-                    android:fontFamily="@font/muli_bold"
+                    android:fontFamily="@font/roboto_medium"
                     android:inputType="textPassword"
                     android:textColor="@color/black">
 
@@ -107,6 +107,7 @@
                 android:layout_marginTop="10dp">
 
                 <CheckBox
+                    android:id="@+id/remember_me"
                     style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -116,9 +117,12 @@
                     android:textColor="@color/black" />
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/login_forget_password"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
+                    android:layout_marginStart="97dp"
+                    android:layout_toEndOf="@+id/remember_me"
                     android:background="#00000000"
                     android:text="@string/forget_password"
                     android:textColor="@color/black" />

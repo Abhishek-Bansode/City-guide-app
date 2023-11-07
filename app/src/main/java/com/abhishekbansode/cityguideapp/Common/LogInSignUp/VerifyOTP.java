@@ -76,7 +76,7 @@ public class VerifyOTP extends AppCompatActivity {
         crossBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SignUp.class);
+                Intent intent = new Intent(VerifyOTP.this, SignUp.class);
                 startActivity(intent);
             }
         });
