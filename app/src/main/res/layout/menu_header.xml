@@ -10,8 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="138dp"
+        android:layout_marginBottom="37dp"
         android:layout_toStartOf="@+id/bicycleImage"
         android:text="@string/slogan_name" />
 
@@ -34,11 +34,12 @@
 
     <ImageView
         android:id="@+id/bicycleImage"
-        android:layout_width="140dp"
-        android:layout_height="190dp"
+        android:layout_width="148dp"
+        android:layout_height="175dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:contentDescription="@string/bicycle_image"
         android:src="@drawable/half_bicycle" />
+
 
 </RelativeLayout>
