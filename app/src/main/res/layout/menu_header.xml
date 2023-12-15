@@ -30,11 +30,11 @@
         android:layout_above="@id/app_name"/>
 
     <ImageView
-        android:layout_width="160dp"
+        android:layout_width="148dp"
         android:layout_height="175dp"
-        android:src="@drawable/half_bicycle"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/half_bicycle" />
 
 
 </RelativeLayout>
