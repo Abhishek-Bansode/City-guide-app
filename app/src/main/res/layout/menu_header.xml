@@ -9,36 +9,31 @@
         android:id="@+id/menu_slogan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/slogan_name"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="138dp"
-        android:layout_marginBottom="37dp"
-        android:layout_toStartOf="@+id/bicycleImage"
-        android:text="@string/slogan_name" />
+        android:layout_marginBottom="10dp" />
 
     <TextView
         android:id="@+id/app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/menu_slogan"
-        android:fontFamily="sans-serif-black"
         android:text="@string/logo_name"
-        android:textColor="@color/black"
-        android:textSize="24sp" />
+        android:fontFamily="sans-serif-black"
+        android:textSize="24sp"
+        android:layout_above="@id/menu_slogan"
+        android:textColor="@color/black"/>
 
     <ImageView
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_above="@id/app_name"
-        android:contentDescription="@string/menu_icon_image"
-        android:src="@drawable/menu_icon" />
+        android:src="@drawable/menu_icon"
+        android:layout_above="@id/app_name"/>
 
     <ImageView
-        android:id="@+id/bicycleImage"
         android:layout_width="148dp"
         android:layout_height="175dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:contentDescription="@string/bicycle_image"
         android:src="@drawable/half_bicycle" />
 
 

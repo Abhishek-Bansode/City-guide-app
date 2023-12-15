@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">City-Guide-App</string>
     <string name="logo_name">Get A Way</string>
-    <string name="slogan_name">We will help you to find your way!</string>
+    <string name="slogan_name">We will help you\nto find your way!</string>
     <string name="powered_by_line">Powered by Abhishek Bansode</string>
     <string name="splash_screen_img">splash_screen_img</string>
     <string name="backImage">backImage</string>
