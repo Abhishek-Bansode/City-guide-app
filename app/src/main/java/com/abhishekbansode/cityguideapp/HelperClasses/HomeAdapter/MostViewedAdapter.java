@@ -25,7 +25,7 @@ public class MostViewedAdapter extends RecyclerView.Adapter<MostViewedAdapter.Mo
     @NonNull
     @Override
     public MostViewedViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.most_viewed_card_design, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.most_viewed_card_m3d, parent, false);
         MostViewedViewHolder mostViewedViewHolder = new MostViewedViewHolder(view);
         return mostViewedViewHolder;
     }

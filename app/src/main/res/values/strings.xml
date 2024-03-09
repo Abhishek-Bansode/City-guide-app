@@ -46,7 +46,7 @@
     <string name="search_text">Search…</string>
     <string name="searchIconToLeft">SearchIconToLeft</string>
     <string name="mcdonald_s">McDonald\'s</string>
-    <string name="demo_desc">this_is_demo_description_this_is_demo_description_this_is_demo_description</string>
+    <string name="demo_desc">ultricies tristique nulla aliquet enim tortor at auctor urna nunc id cursus metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper eget duis at tellus at urna condimentum mattis pellentesque id nibh tortor id aliquet lectus proin nibh nisl condimentum id venenatis a</string>
     <string name="mcdonalds_1">McDonald\'s</string>
     <string name="asbk_dkljod_jkj_woej_fskdj_wjewoj_wjekf_wejkwje">asbk dkljod jkj woej fskdj wjewoj wjekf wejkwje</string>
     <string name="restaurant_1">Restaurant</string>
@@ -127,4 +127,7 @@
     <string name="menu_icon_image">Menu Icon Image</string>
     <string name="bicycle_image">Bicycle Image</string>
 
+    <string name="new_york_city">New York City</string>
+    <string name="action_1">ACTION 1</string>
+    <string name="action_2">ACTION 2</string>
 </resources>

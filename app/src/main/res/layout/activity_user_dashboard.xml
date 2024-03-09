@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".User.UserDashboard"
-    tools:openDrawer="start">
+    tools:openDrawer="end">
 
 
     <com.google.android.material.navigation.NavigationView
@@ -23,7 +23,7 @@
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/home_background"
+        android:background="@color/home_background_2"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -86,7 +86,7 @@
                         android:layout_marginEnd="40dp"
                         android:layout_marginRight="40dp"
                         android:layout_marginBottom="20dp"
-                        android:background="@color/white"
+                        android:background="@drawable/custom_card_bg"
                         android:elevation="8dp">
 
                         <TextView
@@ -128,7 +128,7 @@
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:layout_margin="10dp"
-                            android:background="@color/card1"
+                            android:background="@drawable/card_1"
                             android:elevation="8dp">
 
                             <ImageView
@@ -161,7 +161,7 @@
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:layout_margin="10dp"
-                            android:background="@color/card2"
+                            android:background="@drawable/card_2"
                             android:elevation="8dp">
 
                             <ImageView
@@ -194,7 +194,7 @@
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:layout_margin="10dp"
-                            android:background="@color/card3"
+                            android:background="@drawable/card_3"
                             android:elevation="8dp">
 
                             <ImageView
@@ -228,7 +228,7 @@
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:layout_margin="10dp"
-                            android:background="@color/card4"
+                            android:background="@drawable/card_4"
                             android:elevation="8dp">
 
                             <ImageView
@@ -258,18 +258,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_marginTop="20dp"
-                    android:background="@color/banner_background_light">
+                    android:background="@drawable/custom_card_bg">
+<!--                    android:background="@color/banner_background_light"-->
 
                     <LinearLayout
                         android:id="@+id/featured_background"
-                        android:layout_width="180dp"
+                        android:layout_width="150dp"
                         android:layout_height="290dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
-                        android:background="@color/banner_background"
+                        android:background="@drawable/custom_card_bg2"
                         android:orientation="vertical"
                         android:padding="14dp">
 
@@ -281,7 +283,7 @@
                             android:text="@string/featured_locations"
                             android:textAllCaps="true"
                             android:textColor="@color/colorAccent"
-                            android:textSize="22sp" />
+                            android:textSize="20sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -306,6 +308,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:orientation="vertical"
+                    android:background="@drawable/custom_card_bg"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="10dp"
                     android:padding="20dp">
 
                     <RelativeLayout
@@ -322,29 +328,31 @@
                             android:textSize="20sp" />
 
                         <TextView
+                            android:id="@+id/most_viewed_view_all"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
-                            android:background="#FFFFFF"
                             android:text="@string/view_all"
                             android:textColor="#2E2E2E"
                             tools:ignore="RelativeOverlap" />
-
-
                     </RelativeLayout>
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/most_viewed_recycler"
                         android:layout_width="match_parent"
-                        android:layout_height="100dp" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
                     android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/custom_card_bg"
                     android:padding="20dp">
 
                     <RelativeLayout
@@ -361,20 +369,20 @@
                             android:textSize="20sp" />
 
                         <TextView
+                            android:id="@+id/categories_view_all"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
                             android:text="@string/view_all"
                             tools:ignore="RelativeOverlap" />
-
-
                     </RelativeLayout>
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/categories_recycler1"
                         android:layout_width="match_parent"
-                        android:layout_height="250dp" />
+                        android:layout_height="250dp"
+                        android:layout_marginTop="5dp" />
                 </LinearLayout>
 
             </LinearLayout>
