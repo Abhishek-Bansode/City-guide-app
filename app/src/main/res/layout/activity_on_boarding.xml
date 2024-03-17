@@ -24,7 +24,6 @@
 
 
     <Button
-        android:id="@+id/skip_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#00000000"
@@ -64,7 +63,6 @@
             android:paddingBottom="20dp" />
 
         <Button
-            android:id="@+id/next_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="200dp"
     android:background="@color/lightWhite"
@@ -11,7 +12,8 @@
         android:layout_height="wrap_content"
         android:text="@string/slogan_name"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="10dp"
+        tools:ignore="RelativeOverlap" />
 
     <TextView
         android:id="@+id/app_name"
@@ -27,14 +29,16 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/menu_icon"
-        android:layout_above="@id/app_name"/>
+        android:layout_above="@id/app_name"
+        android:contentDescription="@string/menu_icon_image" />
 
     <ImageView
         android:layout_width="148dp"
         android:layout_height="175dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:src="@drawable/half_bicycle" />
+        android:src="@drawable/half_bicycle"
+        android:contentDescription="TODO" />
 
 
 </RelativeLayout>

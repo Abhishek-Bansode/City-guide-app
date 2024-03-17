@@ -178,12 +178,9 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId()) {
-            case R.id.nav_all_categories:
-                startActivity(new Intent(getApplicationContext(),AllCategories.class));
-                break;
+        if (item.getItemId() == R.id.nav_all_categories) {
+            startActivity(new Intent(getApplicationContext(), AllCategories.class));
         }
-
 
         return true;
     }

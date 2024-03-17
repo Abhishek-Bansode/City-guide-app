@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="blue">#387ADF</color>
-
     <color name="primary_color">#FFE400</color>
-    <color name="Gold">#FFD700</color>
     <color name="teal_200">#80CBC4</color>
     <color name="teal_700">#00796B</color>
-    <color name="purple_500">#9C27B0</color>
     <color name="purple_700">#7B1FA2</color>
     <color name="purple_200">#CE93D8</color>
-    <color name="teal">#008577</color>
 
     <!-- original colors to be used in this project -->
     <color name="colorPrimary">#FFF06D</color>
@@ -22,10 +17,8 @@
 
     <!--Dashboard colors-->
     <!--body and background colors-->
-    <color name="home_background">#f2f5f8</color>
     <color name="home_background_2">#D3D3D3</color>
     <color name="banner_background">#F1E9CE</color>
-    <color name="banner_background_light">#56F1E9CE</color>
 
     <!--card colors-->
     <!--    <color name="card1">#d4cbe5</color>-->

@@ -4,7 +4,7 @@ public class UserHelperClass {
 
     String fullName, phoneNo, email, username, password, date, gender;
 
-    public UserHelperClass(){};
+    public UserHelperClass(){}
 
     public UserHelperClass(String fullName, String phoneNo, String email, String username, String password, String date, String gender) {
         this.fullName = fullName;

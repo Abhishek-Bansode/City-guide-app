@@ -57,7 +57,6 @@
                 android:src="@drawable/mobile_custom_icon" />
 
             <TextView
-                android:id="@+id/mobile_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -68,7 +67,6 @@
                 android:textSize="25sp" />
 
             <TextView
-                android:id="@+id/mobile_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/mobile_icon"
@@ -104,7 +102,6 @@
                 android:src="@drawable/field_email_icon" />
 
             <TextView
-                android:id="@+id/mail_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -114,7 +111,6 @@
                 android:textSize="25sp" />
 
             <TextView
-                android:id="@+id/mail_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/mail_icon"

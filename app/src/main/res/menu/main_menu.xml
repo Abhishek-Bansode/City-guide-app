@@ -8,7 +8,6 @@
             android:title="@string/home" />
 
         <item
-            android:id="@+id/nav_search"
             android:icon="@drawable/search_icon"
             android:title="@string/search" />
 
@@ -18,7 +17,6 @@
             android:title="@string/all_categories" />
 
         <item
-            android:id="@+id/nav_add_missing_place"
             android:icon="@drawable/add_missing_place_icon"
             android:title="@string/add_missing_place" />
 
@@ -30,17 +28,14 @@
 
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/nav_login"
                     android:icon="@drawable/login_icon"
                     android:title="@string/login" />
 
                 <item
-                    android:id="@+id/nav_profile"
                     android:icon="@drawable/profile_account_icon"
                     android:title="@string/profile" />
 
                 <item
-                    android:id="@+id/nav_logout"
                     android:icon="@drawable/logout_icon"
                     android:title="@string/logout" />
 
@@ -56,22 +51,18 @@
 
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/nav_restaurants"
                     android:icon="@drawable/restaurant_icon"
                     android:title="@string/restaurants1" />
 
                 <item
-                    android:id="@+id/nav_banks"
                     android:icon="@drawable/bank_icon"
                     android:title="@string/banks1" />
 
                 <item
-                    android:id="@+id/nav_education"
                     android:icon="@drawable/education_icon"
                     android:title="@string/education1" />
 
                 <item
-                    android:id="@+id/nav_shops"
                     android:icon="@drawable/shop_icon"
                     android:title="@string/shops1" />
 
@@ -87,12 +78,10 @@
         <menu>
             <group android:checkableBehavior="none">
                 <item
-                    android:id="@+id/nav_share"
                     android:icon="@drawable/share_icon"
                     android:title="@string/share" />
 
                 <item
-                    android:id="@+id/rate_us"
                     android:icon="@drawable/rate_us_icon"
                     android:title="@string/rate_us" />
             </group>
