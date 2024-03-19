@@ -1,6 +1,7 @@
 package com.abhishekbansode.cityguideapp.HelperClasses.HomeAdapter;
 
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,8 +35,19 @@ public class MostViewedAdapter extends RecyclerView.Adapter<MostViewedAdapter.Mo
     public void onBindViewHolder(@NonNull MostViewedViewHolder holder, int position) {
         MostViewedHelperClass helperClass = mostViewedLocations.get(position);
 
-        holder.imageView.setImageResource(helperClass.getImageView());
-        holder.textView.setText(helperClass.getTextView());
+        try {
+            // Attempt to set the image resource
+            holder.imageView.setImageResource(helperClass.getImageView());
+            holder.textView.setText(helperClass.getTextView());
+        } catch (NullPointerException e) {
+            // Handle the NullPointerException gracefully
+            Log.e("App Error", "An error occurred", e); // Or log the exception
+            // Optionally, provide a fallback behavior or error message
+        }
+
+
+//        holder.imageView.setImageResource(helperClass.getImageView());
+//        holder.textView.setText(helperClass.getTextView());
     }
 
     @Override
