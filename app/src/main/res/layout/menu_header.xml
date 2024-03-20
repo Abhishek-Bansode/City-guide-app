@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    android:background="@color/lightWhite"
     android:padding="15dp">
 
     <TextView
@@ -38,7 +37,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:src="@drawable/half_bicycle"
-        android:contentDescription="TODO" />
+        android:contentDescription="@string/menuImgDes"
+        tools:ignore="ContentDescription" />
 
 
 </RelativeLayout>

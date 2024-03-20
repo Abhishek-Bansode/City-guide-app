@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:padding="30dp"
+    android:padding="20dp"
     tools:context=".Common.LogInSignUp.SignUp2Class">
 
     <LinearLayout
@@ -16,7 +15,6 @@
             android:id="@+id/signup_back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/banner_background"
             android:contentDescription="@string/back_arrow_btn_img"
             android:padding="5dp"
             android:src="@drawable/general_back_icon"
@@ -104,7 +102,6 @@
             android:layout_marginTop="20dp"
             android:background="@color/primary_color"
             android:elevation="5dp"
-            android:onClick="CallToSignUP3CallScreen"
             android:text="@string/next_btn"
             android:textColor="@color/black"
             android:transitionName="transition_next_btn" />
@@ -115,6 +112,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/black_border"
             android:elevation="5dp"
             android:fontFamily="@font/poppins_medium"

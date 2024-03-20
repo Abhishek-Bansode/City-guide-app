@@ -27,6 +27,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public class VerifyOTP extends AppCompatActivity {
@@ -65,9 +66,12 @@ public class VerifyOTP extends AppCompatActivity {
         verifyOTPBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String code = pinFromUser.getText().toString();
+                String code = Objects.requireNonNull(pinFromUser.getText()).toString();
                 if(!code.isEmpty()) {
                     verifyCode(code);
+                    Toast.makeText(VerifyOTP.this, "OTP is verified", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(VerifyOTP.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -94,7 +98,7 @@ public class VerifyOTP extends AppCompatActivity {
         phoneNo = getIntent().getStringExtra("phoneNo");
         whatToDo = getIntent().getStringExtra("whatToDo");
 
-       otpDescriptionText.setText("Enter OTP Sent On: " + phoneNo);
+       otpDescriptionText.setText(String.format("%s%s", getString(R.string.enter_otp_sent_on), phoneNo));
        sendVerificationCodeToUser(phoneNo);
     }
 
@@ -111,7 +115,7 @@ public class VerifyOTP extends AppCompatActivity {
     }
 
 
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+    private final PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
         @Override
         public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
             String code = phoneAuthCredential.getSmsCode();
@@ -138,9 +142,7 @@ public class VerifyOTP extends AppCompatActivity {
         signInUsingCredential(credential);
     }
 
-//    private void signInUsingCredential(PhoneAuthCredential credential) {
-//
-//    }
+
     private void signInUsingCredential(PhoneAuthCredential credential) {
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 

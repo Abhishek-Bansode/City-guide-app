@@ -26,8 +26,7 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Ad
     @Override
     public AdapterAllCategoriesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.categories_card_design, parent, false);
-        AdapterAllCategoriesViewHolder lvh = new AdapterAllCategoriesViewHolder(view);
-        return lvh;
+        return new AdapterAllCategoriesViewHolder(view);
     }
 
     @Override

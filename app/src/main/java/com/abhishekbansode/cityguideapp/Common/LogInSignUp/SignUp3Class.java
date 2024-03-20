@@ -29,7 +29,7 @@ public class SignUp3Class extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_sign_up3_class);
+        setContentView(R.layout.activity_retailer_sign_up_3);
 
         // Hooks
         phoneNumber = findViewById(R.id.signup_phone_number);

@@ -2,8 +2,10 @@ package com.abhishekbansode.cityguideapp.Common.LogInSignUp;
 
 import static com.abhishekbansode.cityguideapp.R.id.age_picker;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Pair;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -22,6 +24,7 @@ import java.util.Calendar;
 
 public class SignUp2Class extends AppCompatActivity {
 
+
     // Variables
     ImageView backBtn;
     Button nextBtn2, loginBtn;
@@ -34,7 +37,7 @@ public class SignUp2Class extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_sign_up2_class);
+        setContentView(R.layout.activity_retailer_sign_up_2);
 
         // Hooks
         backBtn = findViewById(R.id.signup_back_button);
@@ -44,8 +47,15 @@ public class SignUp2Class extends AppCompatActivity {
         radioGroup = findViewById(R.id.radio_group);
         datePicker = findViewById(age_picker);
 
-        /*
- calling SignUpScreen3 by next button
+        // Add transition
+        Pair[] pairs = new Pair[4];
+        pairs[0] = new Pair<View, String>(backBtn, "transition_back_arrow_btn");
+        pairs[1] = new Pair<View, String>(nextBtn2, "transition_next_btn");
+        pairs[2] = new Pair<View, String>(loginBtn, "transition_login_btn");
+        pairs[3] = new Pair<View, String>(titleText, "transition_title_text");
+
+
+//      calling SignUpScreen3 by next button
         nextBtn2.setOnClickListener(view -> {
             if(!validateAge() | !validateGender()) {
                 return;
@@ -60,24 +70,18 @@ public class SignUp2Class extends AppCompatActivity {
 
             String date = day + "/" + month + "/" + year;
 
-            // Add transition
-            Pair[] pairs = new Pair[4];
-            pairs[0] = new Pair<View, String>(backBtn, "transition_back_arrow_btn");
-            pairs[1] = new Pair<View, String>(nextBtn2, "transition_next_btn");
-            pairs[2] = new Pair<View, String>(loginBtn, "transition_login_btn");
-            pairs[3] = new Pair<View, String>(titleText, "transition_title_text");
+//            Intent intent = new Intent(SignUp2Class.this, SignUp3Class.class);
+            Intent intent = new Intent(SignUp2Class.this, VerifyOTP.class);
 
-            Intent intent = new Intent(SignUp2Class.this, SignUp3Class.class);
-
-            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp2Class.this, pairs);
+            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, pairs);
             startActivity(intent, options.toBundle());
 
         });
-*/
 
-        // this intent is not working properly
-        // as this does not navigating to SignUp3Class.java
-        // so, the work flow is stopped for OTP screen and database also
+
+//        // this intent is not working properly
+//        // as this does not navigating to SignUp3Class.java
+//        // so, the work flow is stopped for OTP screen and database also
 //        nextBtn2.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -118,10 +122,10 @@ public class SignUp2Class extends AppCompatActivity {
         }
     }
 
-
-    // for testing only
-    public void CallToSignUP3CallScreen(View view) {
-        Intent intent = new Intent(SignUp2Class.this, SignUp3Class.class);
-        startActivity(intent);
-    }
+//
+//    // for testing only
+//    public void CallToSignUP3CallScreen(View view) {
+//        Intent intent = new Intent(SignUp2Class.this, SignUp3Class.class);
+//        startActivity(intent);
+//    }
 }

@@ -45,6 +45,15 @@ public class SignUp extends AppCompatActivity {
         password = findViewById(R.id.signup_password);
 
 
+        // Add transition
+        Pair[] pairs = new Pair[4];
+
+        pairs[0] = new Pair<View, String>(backBtn, "transition_back_arrow_btn");
+        pairs[1] = new Pair<View, String>(nextBtn1, "transition_next_btn");
+        pairs[2] = new Pair<View, String>(login, "transition_login_btn");
+        pairs[3] = new Pair<View, String>(titleText, "transition_title_text");
+
+
         /*
         *  nextBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,13 +72,6 @@ public class SignUp extends AppCompatActivity {
             }
             Intent intent = new Intent(SignUp.this, SignUp2Class.class);
 
-            // Add transition
-            Pair[] pairs = new Pair[4];
-
-            pairs[0] = new Pair<View, String>(backBtn, "transition_back_arrow_btn");
-            pairs[1] = new Pair<View, String>(nextBtn1, "transition_next_btn");
-            pairs[2] = new Pair<View, String>(login, "transition_login_btn");
-            pairs[3] = new Pair<View, String>(titleText, "transition_title_text");
 
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp.this, pairs);
             startActivity(intent, options.toBundle());
