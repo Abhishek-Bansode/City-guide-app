@@ -22,7 +22,7 @@ public class SignUp3Class extends AppCompatActivity {
     // variables
     TextInputLayout phoneNumber;
     CountryCodePicker countryCodePicker;
-    Button nextBtn3;
+    Button nextBtn3, loginBtn;
     ImageView backBtn;
 
     @Override
@@ -35,7 +35,7 @@ public class SignUp3Class extends AppCompatActivity {
         phoneNumber = findViewById(R.id.signup_phone_number);
         countryCodePicker = findViewById(R.id.country_code_picker);
         nextBtn3 = findViewById(R.id.signup_next_button_page3);
-        backBtn = findViewById(R.id.signup_back_button);
+        backBtn = findViewById(R.id.signup3_back_button);
 
         nextBtn3.setOnClickListener(view -> {
             // validate fields
@@ -78,6 +78,14 @@ public class SignUp3Class extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SignUp3Class.this, SignUp2Class.class);
+                startActivity(intent);
+            }
+        });
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SignUp3Class.this, Login.class);
                 startActivity(intent);
             }
         });

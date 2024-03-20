@@ -84,7 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:background="@color/primary_color"
+            android:background="@drawable/custom_btn_bg"
             android:text="@string/verify_code"
             android:textColor="@color/black" />
 

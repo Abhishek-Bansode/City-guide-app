@@ -22,7 +22,7 @@ public class SignUp extends AppCompatActivity {
     // Variables
     TextInputLayout fullName, userName, email, password;
     ImageView backBtn;
-    Button nextBtn1, login;
+    Button nextBtn1, loginBtn;
     TextView titleText;
 
 
@@ -33,9 +33,9 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.activity_retailer_sign_up);
 
         // hooks
-        backBtn = findViewById(R.id.signup_back_button);
+        backBtn = findViewById(R.id.signup1_back_button);
         nextBtn1 = findViewById(R.id.signup_next_button_page1);
-        login = findViewById(R.id.signup_login_button);
+        loginBtn = findViewById(R.id.signup_login_button);
         titleText = findViewById(R.id.signup_title_text);
 
         // finding their id's from XML and put it here (remaining)
@@ -50,7 +50,7 @@ public class SignUp extends AppCompatActivity {
 
         pairs[0] = new Pair<View, String>(backBtn, "transition_back_arrow_btn");
         pairs[1] = new Pair<View, String>(nextBtn1, "transition_next_btn");
-        pairs[2] = new Pair<View, String>(login, "transition_login_btn");
+        pairs[2] = new Pair<View, String>(loginBtn, "transition_login_btn");
         pairs[3] = new Pair<View, String>(titleText, "transition_title_text");
 
 
@@ -72,7 +72,6 @@ public class SignUp extends AppCompatActivity {
             }
             Intent intent = new Intent(SignUp.this, SignUp2Class.class);
 
-
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp.this, pairs);
             startActivity(intent, options.toBundle());
         });
@@ -81,6 +80,14 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), RetailerStartUpScreen.class);
+                startActivity(intent);
+            }
+        });
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SignUp.this, Login.class);
                 startActivity(intent);
             }
         });
