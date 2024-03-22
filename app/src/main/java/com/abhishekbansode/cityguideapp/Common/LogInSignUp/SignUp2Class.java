@@ -2,6 +2,7 @@ package com.abhishekbansode.cityguideapp.Common.LogInSignUp;
 
 import static com.abhishekbansode.cityguideapp.R.id.age_picker;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Pair;
@@ -56,24 +57,24 @@ public class SignUp2Class extends AppCompatActivity {
 
 //      calling SignUpScreen3 by next button
         nextBtn2.setOnClickListener(view -> {
-//            if(!validateAge() | !validateGender()) {
-//                Toast.makeText(this, "Something went wrong in signup screen 2", Toast.LENGTH_LONG).show();
-//                return;
-//            }
+            if(!validateAge() | !validateGender()) {
+                Toast.makeText(this, "Something went wrong in signup screen 2", Toast.LENGTH_LONG).show();
+                return;
+            }
 
-//            selectGender = findViewById(radioGroup.getCheckedRadioButtonId());
-//            String gender = selectGender.getText().toString();
-//
-//            int day = datePicker.getDayOfMonth();
-//            int month = datePicker.getMonth();
-//            int year = datePicker.getYear();
-//
-//            String date = day + "/" + month + "/" + year;
+            selectGender = findViewById(radioGroup.getCheckedRadioButtonId());
+            String gender = selectGender.getText().toString();
+
+            int day = datePicker.getDayOfMonth();
+            int month = datePicker.getMonth();
+            int year = datePicker.getYear();
+
+            String date = day + "/" + month + "/" + year;
 
             Intent intent = new Intent(SignUp2Class.this, SignUp3Class.class);
 //
-//            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, pairs);
-//            startActivity(intent, options.toBundle());
+            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, pairs);
+            startActivity(intent, options.toBundle());
 
             startActivity(intent);
 

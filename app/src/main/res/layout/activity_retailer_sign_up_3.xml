@@ -41,40 +41,59 @@
 
 
             <com.hbb20.CountryCodePicker
-                android:id="@+id/country_code_picker"
+                android:id="@+id/cpp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/black_border"
                 android:padding="7dp"
                 app:ccp_autoDetectCountry="true"
+                app:ccp_countryPreference="in"
                 app:ccp_showFlag="true"
                 app:ccp_showFullName="true"
                 app:ccp_showNameCode="true" />
 
 
-            <com.google.android.material.textfield.TextInputLayout
+            <EditText
                 android:id="@+id/signup_phone_number"
-                style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/black_border"
                 android:hint="@string/phone_number"
+                android:inputType="phone"
+                android:singleLine="true"
                 android:textColorHint="@color/black"
                 app:boxStrokeColor="@color/black"
                 app:boxStrokeWidthFocused="2dp"
-                android:layout_marginTop="10dp"
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/black"
                 app:hintTextColor="@color/black"
                 app:startIconDrawable="@drawable/field_phone_number_icon"
-                app:startIconTint="@color/black">
+                app:startIconTint="@color/black" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/black_border"
-                    android:inputType="phone" />
+            <!--            <com.google.android.material.textfield.TextInputLayout-->
+            <!--                android:id="@+id/signup_phone_number"-->
+            <!--                style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="10dp"-->
+            <!--                android:hint="@string/phone_number"-->
+            <!--                android:textColorHint="@color/black"-->
+            <!--                app:boxStrokeColor="@color/black"-->
+            <!--                app:boxStrokeWidthFocused="2dp"-->
+            <!--                app:endIconMode="clear_text"-->
+            <!--                app:endIconTint="@color/black"-->
+            <!--                app:hintTextColor="@color/black"-->
+            <!--                app:startIconDrawable="@drawable/field_phone_number_icon"-->
+            <!--                app:startIconTint="@color/black">-->
 
-            </com.google.android.material.textfield.TextInputLayout>
+            <!--                <com.google.android.material.textfield.TextInputEditText-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:background="@drawable/black_border"-->
+            <!--                    android:inputType="phone" />-->
+
+            <!--            </com.google.android.material.textfield.TextInputLayout>-->
 
         </LinearLayout>
 
@@ -91,7 +110,7 @@
             android:transitionName="transition_next_btn" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/signup_login_button"
+            android:id="@+id/signup3_login_button"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

@@ -35,7 +35,7 @@ public class ForgetPassword extends AppCompatActivity {
         title = findViewById(R.id.forget_password_title);
         description = findViewById(R.id.forget_password_description);
         phoneNumberTextField = findViewById(R.id.forget_password_phone_number);
-        countryCodePicker = findViewById(R.id.country_code_picker);
+        countryCodePicker = findViewById(R.id.cpp);
         nextBtn = findViewById(R.id.forget_password_next_btn);
 //        progressBar = findViewById(R.id.progress_bar);
 

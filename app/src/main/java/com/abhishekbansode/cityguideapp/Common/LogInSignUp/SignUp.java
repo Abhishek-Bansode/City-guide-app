@@ -79,7 +79,7 @@ public class SignUp extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), RetailerStartUpScreen.class);
+                Intent intent = new Intent(SignUp.this, RetailerStartUpScreen.class);
                 startActivity(intent);
             }
         });
@@ -107,14 +107,14 @@ public class SignUp extends AppCompatActivity {
 
     private boolean validateUsername() {
         String val = Objects.requireNonNull(userName.getEditText()).getText().toString().trim();
-        String checkspaces = "\\A\\w{4,20}\\z";
+        String checkSpaces = "\\A\\w{4,20}\\z";
         if (val.isEmpty()) {
             userName.setError("Field can not be Empty");
             return false;
         } else if (val.length() >= 15) {
             userName.setError("Username is too long!");
             return false;
-        } else if (!val.matches(checkspaces)) {
+        } else if (!val.matches(checkSpaces)) {
             userName.setError("No whitespaces are allowed!");
             return false;
         } else {
@@ -141,7 +141,7 @@ public class SignUp extends AppCompatActivity {
     }
 
     private boolean validatePassword() {
-        String val = password.getEditText().getText().toString().trim();
+        String val = Objects.requireNonNull(password.getEditText()).getText().toString().trim();
         String checkPassword = "^" +
                 //"(?=.*[0-9])" +         //at least 1 digit
                 //"(?=.*[a-z])" +         //at least 1 lower case letter

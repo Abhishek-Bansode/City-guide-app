@@ -61,7 +61,6 @@ public class VerifyOTP extends AppCompatActivity {
          phoneNo = getIntent().getStringExtra("phoneNo");
 
 
-
         // on clicking verify button
         verifyOTPBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,7 +97,7 @@ public class VerifyOTP extends AppCompatActivity {
         phoneNo = getIntent().getStringExtra("phoneNo");
         whatToDo = getIntent().getStringExtra("whatToDo");
 
-       otpDescriptionText.setText(String.format("%s%s", getString(R.string.enter_otp_sent_on), phoneNo));
+//       otpDescriptionText.setText(String.format("%s%s", getString(R.string.enter_otp_sent_on), phoneNo));
        sendVerificationCodeToUser(phoneNo);
     }
 
@@ -173,16 +172,5 @@ public class VerifyOTP extends AppCompatActivity {
         UserHelperClass addNewUser = new UserHelperClass(fullName, phoneNo, email, username, password, date, gender);
 
         reference.child(phoneNo).setValue(addNewUser);
-    }
-
-//    // first check call and then redirect user accordingly to the Profile or to set new password screen
-//    public void callNextScreenFromOTP(View view) {
-//        String code = pinFromUser.getText().toString();
-//        if(!code.isEmpty()) {
-//            verifyCode(code);
-//        }
-//    }
-
-    public void goToHomeOTP(View view) {
     }
 }

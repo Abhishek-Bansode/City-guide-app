@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="30dp">
+        android:padding="20dp">
 
         <ImageView
             android:id="@+id/back_to_signup_page"
@@ -88,8 +88,6 @@
             android:text="@string/verify_code"
             android:textColor="@color/black" />
 
-
     </LinearLayout>
-
 
 </ScrollView>
