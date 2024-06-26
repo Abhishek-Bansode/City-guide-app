@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary_color"
-    android:padding="30dp"
+    android:padding="20dp"
     android:transitionName="transition_login"
     tools:context=".Common.LogInSignUp.Login">
 
@@ -15,8 +14,9 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/login_back_button"
+            android:layout_width="30dp"
+            android:layout_height="32dp"
             android:contentDescription="@string/back_to_retailers_screen"
             android:padding="5dp"
             android:src="@drawable/general_back_icon" />
@@ -138,8 +138,9 @@
 
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/create_acc_btn"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="41dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:background="#00000000"

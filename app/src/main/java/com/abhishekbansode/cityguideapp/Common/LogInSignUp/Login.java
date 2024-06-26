@@ -3,12 +3,15 @@ package com.abhishekbansode.cityguideapp.Common.LogInSignUp;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -25,10 +28,13 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.hbb20.CountryCodePicker;
 
+import java.util.Objects;
+
 public class Login extends AppCompatActivity {
 
     // variables
-    Button logInBtn, forgetPasswordBtn;
+    Button logInBtn, forgetPasswordBtn, createAccountBtn;
+    ImageView backBtn;
     CountryCodePicker countryCodePicker;
     TextInputLayout phoneNumber, password;
     ProgressBar progressbar;
@@ -40,12 +46,16 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_retailer_login);
 
         // hooks
+        backBtn = findViewById(R.id.login_back_button);
         logInBtn = findViewById(R.id.letTheUserLogin);
+        createAccountBtn = findViewById(R.id.create_acc_btn);
         forgetPasswordBtn = findViewById(R.id.login_forget_password);
         phoneNumber = findViewById(R.id.login_phone_number);
         password = findViewById(R.id.login_password);
         progressbar = findViewById(R.id.login_progress_bar);
 
+
+        // On-Click listeners
         logInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,8 +72,8 @@ public class Login extends AppCompatActivity {
                 progressbar.setVisibility(View.VISIBLE);
 
                 // get data
-                String _phoneNumber = phoneNumber.getEditText().getText().toString().trim();
-                String _password = password.getEditText().getText().toString().trim();
+                String _phoneNumber = Objects.requireNonNull(phoneNumber.getEditText()).getText().toString().trim();
+                String _password = Objects.requireNonNull(password.getEditText()).getText().toString().trim();
 
                 if (_phoneNumber.charAt(0) == '0') {
                     _phoneNumber = _phoneNumber.substring(1);
@@ -81,6 +91,7 @@ public class Login extends AppCompatActivity {
                             phoneNumber.setErrorEnabled(false);
 
                             String systemPassword = snapshot.child(_completePhoneNumber).child("password").getValue(String.class);
+                            assert systemPassword != null;
                             if (systemPassword.equals(_password)) {
                                 password.setError(null);
                                 password.setErrorEnabled(false);
@@ -120,6 +131,41 @@ public class Login extends AppCompatActivity {
             }
         });
 
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Login.this, RetailerStartUpScreen.class);
+                startActivity(intent);
+            }
+        });
+
+        createAccountBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Login.this, SignUp.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private boolean isConnected1(Login login) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) login.getSystemService(CONNECTIVITY_SERVICE);
+
+        NetworkCapabilities networkCapabilities = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            Network network = connectivityManager.getActiveNetwork();
+            if (network != null) {
+                networkCapabilities = connectivityManager.getNetworkCapabilities(network);
+            }
+        } else {
+            NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+            if (networkInfo != null) {
+                return networkInfo.isConnected();
+            }
+        }
+
+        return networkCapabilities != null && (networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)
+                || networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR));
     }
 
 
@@ -132,6 +178,7 @@ public class Login extends AppCompatActivity {
 
         return (wifiConn != null && wifiConn.isConnected()) || (mobileConn != null && mobileConn.isConnected());
     }
+
 
     private void showCustomDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);
@@ -160,8 +207,8 @@ public class Login extends AppCompatActivity {
 
     // fields validations
     private boolean validateFields() {
-        String _phoneNumber = phoneNumber.getEditText().getText().toString().trim();
-        String _password = password.getEditText().getText().toString().trim();
+        String _phoneNumber = Objects.requireNonNull(phoneNumber.getEditText()).getText().toString().trim();
+        String _password = Objects.requireNonNull(password.getEditText()).getText().toString().trim();
 
         if (_phoneNumber.isEmpty()) {
             phoneNumber.setError("Phone number can not be empty");

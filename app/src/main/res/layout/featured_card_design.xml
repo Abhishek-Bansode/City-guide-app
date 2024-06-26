@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="15dp">
+        android:padding="5dp">
 
         <ImageView
             android:id="@+id/featured_image"
@@ -28,6 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_bold"
+            android:layout_marginStart="5dp"
             android:text="@string/mcdonald_s"
             android:textColor="@color/colorAccent"
             android:textSize="20sp" />
@@ -36,12 +37,16 @@
             style="@style/Widget.AppCompat.RatingBar.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+
             android:rating="3.5" />
 
         <TextView
             android:id="@+id/featured_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+
             android:text="@string/demo_desc" />
 
 

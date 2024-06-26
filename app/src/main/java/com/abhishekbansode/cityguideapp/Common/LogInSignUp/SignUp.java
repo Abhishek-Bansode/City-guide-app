@@ -22,7 +22,7 @@ public class SignUp extends AppCompatActivity {
     // Variables
     TextInputLayout fullName, userName, email, password;
     ImageView backBtn;
-    Button nextBtn1, login;
+    Button nextBtn1, loginBtn;
     TextView titleText;
 
 
@@ -33,9 +33,9 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.activity_retailer_sign_up);
 
         // hooks
-        backBtn = findViewById(R.id.signup_back_button);
+        backBtn = findViewById(R.id.signup1_back_button);
         nextBtn1 = findViewById(R.id.signup_next_button_page1);
-        login = findViewById(R.id.signup_login_button);
+        loginBtn = findViewById(R.id.signup_login_button);
         titleText = findViewById(R.id.signup_title_text);
 
         // finding their id's from XML and put it here (remaining)
@@ -43,6 +43,15 @@ public class SignUp extends AppCompatActivity {
         userName = findViewById(R.id.signup_username);
         email = findViewById(R.id.signup_email2);
         password = findViewById(R.id.signup_password);
+
+
+        // Add transition
+        Pair[] pairs = new Pair[4];
+
+        pairs[0] = new Pair<View, String>(backBtn, "transition_back_arrow_btn");
+        pairs[1] = new Pair<View, String>(nextBtn1, "transition_next_btn");
+        pairs[2] = new Pair<View, String>(loginBtn, "transition_login_btn");
+        pairs[3] = new Pair<View, String>(titleText, "transition_title_text");
 
 
         /*
@@ -63,14 +72,6 @@ public class SignUp extends AppCompatActivity {
             }
             Intent intent = new Intent(SignUp.this, SignUp2Class.class);
 
-            // Add transition
-            Pair[] pairs = new Pair[4];
-
-            pairs[0] = new Pair<View, String>(backBtn, "transition_back_arrow_btn");
-            pairs[1] = new Pair<View, String>(nextBtn1, "transition_next_btn");
-            pairs[2] = new Pair<View, String>(login, "transition_login_btn");
-            pairs[3] = new Pair<View, String>(titleText, "transition_title_text");
-
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp.this, pairs);
             startActivity(intent, options.toBundle());
         });
@@ -78,7 +79,15 @@ public class SignUp extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), RetailerStartUpScreen.class);
+                Intent intent = new Intent(SignUp.this, RetailerStartUpScreen.class);
+                startActivity(intent);
+            }
+        });
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SignUp.this, Login.class);
                 startActivity(intent);
             }
         });
@@ -98,14 +107,14 @@ public class SignUp extends AppCompatActivity {
 
     private boolean validateUsername() {
         String val = Objects.requireNonNull(userName.getEditText()).getText().toString().trim();
-        String checkspaces = "\\A\\w{4,20}\\z";
+        String checkSpaces = "\\A\\w{4,20}\\z";
         if (val.isEmpty()) {
             userName.setError("Field can not be Empty");
             return false;
         } else if (val.length() >= 15) {
             userName.setError("Username is too long!");
             return false;
-        } else if (!val.matches(checkspaces)) {
+        } else if (!val.matches(checkSpaces)) {
             userName.setError("No whitespaces are allowed!");
             return false;
         } else {
@@ -132,7 +141,7 @@ public class SignUp extends AppCompatActivity {
     }
 
     private boolean validatePassword() {
-        String val = password.getEditText().getText().toString().trim();
+        String val = Objects.requireNonNull(password.getEditText()).getText().toString().trim();
         String checkPassword = "^" +
                 //"(?=.*[0-9])" +         //at least 1 digit
                 //"(?=.*[a-z])" +         //at least 1 lower case letter

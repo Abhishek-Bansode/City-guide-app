@@ -120,4 +120,5 @@
     <string name="new_york_city">New York City</string>
     <string name="action_1">ACTION 1</string>
     <string name="action_2">ACTION 2</string>
+    <string name="enter_otp_sent_on">"Enter OTP Sent On: "</string>
 </resources>
