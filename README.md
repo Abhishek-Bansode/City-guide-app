@@ -40,29 +40,25 @@ Contributions are welcome! If you're new to mobile app development, City Guide A
 
 
 
-<p float="left">
-<img src="https://raw.githubusercontent.com/Abhishek-Bansode/City-guide-app/a06a9cd399c032ec570b092d743484399fd68cbd/assets/1.jpeg" width="220" height="400" />
- 
-<img src="https://raw.githubusercontent.com/Abhishek-Bansode/City-guide-app/a06a9cd399c032ec570b092d743484399fd68cbd/assets/2.jpeg" width="220" height="400" />
-
-<img src="https://raw.githubusercontent.com/Abhishek-Bansode/City-guide-app/a06a9cd399c032ec570b092d743484399fd68cbd/assets/3.jpeg" width="220" height="400" />
-
-<img src="https://raw.githubusercontent.com/Abhishek-Bansode/City-guide-app/a06a9cd399c032ec570b092d743484399fd68cbd/assets/4.jpeg" width="220" height="400" />
-
-<img src="https://raw.githubusercontent.com/Abhishek-Bansode/City-guide-app/a06a9cd399c032ec570b092d743484399fd68cbd/assets/5.jpeg" width="220" height="400" />
-
-<img src="https://raw.githubusercontent.com/Abhishek-Bansode/City-guide-app/a06a9cd399c032ec570b092d743484399fd68cbd/assets/6.jpeg" width="220" height="400" />
-
-<img src="https://raw.githubusercontent.com/Abhishek-Bansode/City-guide-app/a06a9cd399c032ec570b092d743484399fd68cbd/assets/7.jpeg" width="220" height="400" />
-
-<img src="https://raw.githubusercontent.com/Abhishek-Bansode/City-guide-app/a06a9cd399c032ec570b092d743484399fd68cbd/assets/8.jpeg" width="220" height="400" />
-
-<img src="https://raw.githubusercontent.com/Abhishek-Bansode/City-guide-app/a06a9cd399c032ec570b092d743484399fd68cbd/assets/9.jpeg" width="220" height="400" />
-
-<img src="https://user-images.githubusercontent.com/72120614/101860190-1ad49b80-3b22-11eb-9b70-bf8f3ad010f6.png" width="220" height="400" />
-
-<img src="https://user-images.githubusercontent.com/72120614/101860198-1f00b900-3b22-11eb-9e14-3b1b316b8c0d.png" width="220" height="400" />
-
-</p>
-
-
+<table>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/Abhishek-Bansode/City-guide-app/a06a9cd399c032ec570b092d743484399fd68cbd/assets/1.jpeg" alt="Image 1" width="220" height="400" /></td>
+    <td><img src="https://raw.githubusercontent.com/Abhishek-Bansode/City-guide-app/a06a9cd399c032ec570b092d743484399fd68cbd/assets/2.jpeg" alt="Image 2" width="220" height="400" /></td>
+    <td><img src="https://raw.githubusercontent.com/Abhishek-Bansode/City-guide-app/a06a9cd399c032ec570b092d743484399fd68cbd/assets/3.jpeg" alt="Image 3" width="220" height="400" /></td>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/Abhishek-Bansode/City-guide-app/a06a9cd399c032ec570b092d743484399fd68cbd/assets/4.jpeg" alt="Image 4" width="220" height="400" /></td>
+    <td><img src="https://raw.githubusercontent.com/Abhishek-Bansode/City-guide-app/a06a9cd399c032ec570b092d743484399fd68cbd/assets/5.jpeg" alt="Image 5" width="220" height="400" /></td>
+    <td><img src="https://raw.githubusercontent.com/Abhishek-Bansode/City-guide-app/a06a9cd399c032ec570b092d743484399fd68cbd/assets/6.jpeg" alt="Image 6" width="220" height="400" /></td>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/Abhishek-Bansode/City-guide-app/a06a9cd399c032ec570b092d743484399fd68cbd/assets/7.jpeg" alt="Image 7" width="220" height="400" /></td>
+    <td><img src="https://raw.githubusercontent.com/Abhishek-Bansode/City-guide-app/a06a9cd399c032ec570b092d743484399fd68cbd/assets/8.jpeg" alt="Image 8" width="220" height="400" /></td>
+    <td><img src="https://raw.githubusercontent.com/Abhishek-Bansode/City-guide-app/a06a9cd399c032ec570b092d743484399fd68cbd/assets/9.jpeg" alt="Image 9" width="220" height="400" /></td>
+  </tr>
+  <tr>
+    <td><img src="https://user-images.githubusercontent.com/72120614/101860190-1ad49b80-3b22-11eb-9b70-bf8f3ad010f6.png" alt="Image 10" width="200" height="400" /></td>
+    <td><img src="https://user-images.githubusercontent.com/72120614/101860198-1f00b900-3b22-11eb-9e14-3b1b316b8c0d.png" alt="Image 11" width="200" height="400" /></td>
+    <td><img src=""  width="200" height="400" /></td>
+  </tr>
+</table>
