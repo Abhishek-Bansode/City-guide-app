@@ -52,16 +52,14 @@
                 app:ccp_showFullName="true"
                 app:ccp_showNameCode="true" />
 
-
-            <EditText
-                android:id="@+id/signup_phone_number"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/login_phone_number"
+                style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/black_border"
+                android:layout_marginBottom="10dp"
                 android:hint="@string/phone_number"
-                android:inputType="phone"
-                android:singleLine="true"
                 android:textColorHint="@color/black"
                 app:boxStrokeColor="@color/black"
                 app:boxStrokeWidthFocused="2dp"
@@ -69,37 +67,22 @@
                 app:endIconTint="@color/black"
                 app:hintTextColor="@color/black"
                 app:startIconDrawable="@drawable/field_phone_number_icon"
-                app:startIconTint="@color/black" />
+                app:startIconTint="@color/black">
 
-            <!--            <com.google.android.material.textfield.TextInputLayout-->
-            <!--                android:id="@+id/signup_phone_number"-->
-            <!--                style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_marginTop="10dp"-->
-            <!--                android:hint="@string/phone_number"-->
-            <!--                android:textColorHint="@color/black"-->
-            <!--                app:boxStrokeColor="@color/black"-->
-            <!--                app:boxStrokeWidthFocused="2dp"-->
-            <!--                app:endIconMode="clear_text"-->
-            <!--                app:endIconTint="@color/black"-->
-            <!--                app:hintTextColor="@color/black"-->
-            <!--                app:startIconDrawable="@drawable/field_phone_number_icon"-->
-            <!--                app:startIconTint="@color/black">-->
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/black_border"
+                    android:baselineAligned="false"
+                    android:inputType="phone" />
 
-            <!--                <com.google.android.material.textfield.TextInputEditText-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="match_parent"-->
-            <!--                    android:background="@drawable/black_border"-->
-            <!--                    android:inputType="phone" />-->
-
-            <!--            </com.google.android.material.textfield.TextInputLayout>-->
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/signup_next_button_page3"
-            android:layout_width="250dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
@@ -111,7 +94,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/signup3_login_button"
-            android:layout_width="250dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"

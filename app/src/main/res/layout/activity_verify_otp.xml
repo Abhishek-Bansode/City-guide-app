@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="20dp"
     tools:context=".Common.LogInSignUp.VerifyOTP">
 
     <LinearLayout
@@ -77,10 +78,9 @@
             app:lineColor="@color/colorAccent"
             app:lineWidth="1dp" />
 
-
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/verify_btn"
-            android:layout_width="250dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"

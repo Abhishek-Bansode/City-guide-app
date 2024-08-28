@@ -68,6 +68,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/black_border"
+                    android:baselineAligned="false"
                     android:inputType="phone" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -101,15 +102,14 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
+                android:layout_marginTop="10dp">
 
                 <CheckBox
                     android:id="@+id/remember_me"
                     style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
                     android:buttonTint="@color/black"
                     android:text="@string/remember_me"
@@ -120,7 +120,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginStart="40dp"
+                    android:layout_marginStart="50dp"
                     android:layout_toEndOf="@+id/remember_me"
                     android:background="#00000000"
                     android:text="@string/forget_password"
@@ -130,10 +130,10 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/letTheUserLogin"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="40dp"
                 android:background="@color/black"
                 android:text="@string/login"

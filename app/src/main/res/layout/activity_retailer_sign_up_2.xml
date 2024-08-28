@@ -91,12 +91,11 @@
                 android:datePickerMode="spinner"
                 android:spinnersShown="true" />
 
-
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/signup_next_button_page2"
-            android:layout_width="250dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
@@ -108,7 +107,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/signup_login_button"
-            android:layout_width="250dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
