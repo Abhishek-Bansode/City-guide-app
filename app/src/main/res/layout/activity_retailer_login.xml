@@ -15,7 +15,7 @@
 
         <ImageView
             android:id="@+id/login_back_button"
-            android:layout_width="30dp"
+            android:layout_width="32dp"
             android:layout_height="32dp"
             android:contentDescription="@string/back_to_retailers_screen"
             android:padding="5dp"
@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_bold"
             android:text="@string/login"
             android:textAllCaps="true"
@@ -34,7 +34,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="60dp"
             android:orientation="vertical">
 
             <com.hbb20.CountryCodePicker
@@ -72,7 +72,6 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/login_password"
                 style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
@@ -102,7 +101,9 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
 
                 <CheckBox
                     android:id="@+id/remember_me"
@@ -119,7 +120,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginStart="97dp"
+                    android:layout_marginStart="40dp"
                     android:layout_toEndOf="@+id/remember_me"
                     android:background="#00000000"
                     android:text="@string/forget_password"
@@ -132,6 +133,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
                 android:background="@color/black"
                 android:text="@string/login"
                 android:textColor="@color/white" />
@@ -140,7 +143,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/create_acc_btn"
                 android:layout_width="wrap_content"
-                android:layout_height="41dp"
+                android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:background="#00000000"
