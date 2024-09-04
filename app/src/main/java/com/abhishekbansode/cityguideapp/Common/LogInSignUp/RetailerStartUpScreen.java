@@ -11,8 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.abhishekbansode.cityguideapp.R;
 
-import kotlin.Pair;
-
 public class RetailerStartUpScreen extends AppCompatActivity {
     Button logIn, signUp;
     @Override
@@ -31,13 +29,12 @@ public class RetailerStartUpScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Login.class);
 
-                Pair[] pairs = new Pair[1];
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation
+                        (RetailerStartUpScreen
+                                .this, android.util.Pair.create(logIn, "transition_login"));
 
-                pairs[0] = new Pair<View, String>(findViewById(R.id.login_btn), "transition_login");
-
-//        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(RetailerStartUpScreen.this,Login.class,"transition_login");
-
-                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(RetailerStartUpScreen.this).toBundle());
+                // Start the new activity
+                startActivity(intent, options.toBundle());
             }
         });
 
@@ -46,38 +43,38 @@ public class RetailerStartUpScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SignUp.class);
 
-                Pair[] pairs = new Pair[1];
+                // new way to do this - transition animation
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation
+                        (RetailerStartUpScreen
+                                .this, android.util.Pair.create(signUp, "transition_login"));
 
-                pairs[0] = new Pair<View, String>(findViewById(R.id.signUp_btn), "transition_login");
-
-//        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(RetailerStartUpScreen.this,Login.class,"transition_login");
-
-                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(RetailerStartUpScreen.this).toBundle());
+                // Start the new activity
+                startActivity(intent, options.toBundle());
             }
         });
     }
 
     public void CallLogInScreen(View view) {
-        Intent intent = new Intent(getApplicationContext(), Login.class);
-
-        Pair[] pairs = new Pair[1];
-
-        pairs[0] = new Pair<View, String>(findViewById(R.id.login_btn), "transition_login");
+//        Intent intent = new Intent(getApplicationContext(), Login.class);
+//
+//        Pair[] pairs = new Pair[1];
+//
+//        pairs[0] = new Pair<View, String>(findViewById(R.id.login_btn), "transition_login");
 
 //        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(RetailerStartUpScreen.this,Login.class,"transition_login");
 
-        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+//        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
     }
 
     public void CallSignUpScreen(View view) {
-        Intent intent = new Intent(getApplicationContext(), SignUp.class);
+//        Intent intent = new Intent(getApplicationContext(), SignUp.class);
 
-        Pair[] pairs = new Pair[1];
-
-        pairs[0] = new Pair<View, String>(findViewById(R.id.signUp_btn), "transition_login");
+//        Pair[] pairs = new Pair[1];
+//
+//        pairs[0] = new Pair<View, String>(findViewById(R.id.signUp_btn), "transition_login");
 
 //        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(RetailerStartUpScreen.this,Login.class,"transition_login");
 
-        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+//        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
     }
 }

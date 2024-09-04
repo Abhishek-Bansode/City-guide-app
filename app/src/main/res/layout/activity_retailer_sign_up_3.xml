@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
+    android:id="@+id/signup_3rd_screen_scroll_view"
     tools:context=".Common.LogInSignUp.SignUp3Class">
 
     <LinearLayout
@@ -53,7 +54,7 @@
                 app:ccp_showNameCode="true" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/login_phone_number"
+                android:id="@+id/signup_phone_number"
                 style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

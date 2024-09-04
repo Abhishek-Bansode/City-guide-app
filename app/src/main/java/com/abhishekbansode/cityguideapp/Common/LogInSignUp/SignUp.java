@@ -25,7 +25,6 @@ public class SignUp extends AppCompatActivity {
     Button nextBtn1, loginBtn;
     TextView titleText;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,23 +45,12 @@ public class SignUp extends AppCompatActivity {
 
 
         // Add transition
-        Pair[] pairs = new Pair[4];
+        Pair<View, String>[] pairs = new Pair[4];
 
-        pairs[0] = new Pair<View, String>(backBtn, "transition_back_arrow_btn");
-        pairs[1] = new Pair<View, String>(nextBtn1, "transition_next_btn");
-        pairs[2] = new Pair<View, String>(loginBtn, "transition_login_btn");
-        pairs[3] = new Pair<View, String>(titleText, "transition_title_text");
-
-
-        /*
-        *  nextBtn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(!validateFullName() | !validateEmail() | !validateUsername() | !validatePassword()) {
-                    return;
-                }
-        *
-        * */
+        pairs[0] = new Pair<>(backBtn, "transition_back_arrow_btn");
+        pairs[1] = new Pair<>(nextBtn1, "transition_next_btn");
+        pairs[2] = new Pair<>(loginBtn, "transition_login_btn");
+        pairs[3] = new Pair<>(titleText, "transition_title_text");
 
 
         // calling SignUpScreen2 by next button
@@ -70,9 +58,10 @@ public class SignUp extends AppCompatActivity {
             if(!validateFullName() | !validateEmail() | !validateUsername() | !validatePassword()) {
                 return;
             }
+
             Intent intent = new Intent(SignUp.this, SignUp2Class.class);
 
-            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp.this, pairs);
+            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, pairs);
             startActivity(intent, options.toBundle());
         });
 
@@ -143,13 +132,13 @@ public class SignUp extends AppCompatActivity {
     private boolean validatePassword() {
         String val = Objects.requireNonNull(password.getEditText()).getText().toString().trim();
         String checkPassword = "^" +
-                //"(?=.*[0-9])" +         //at least 1 digit
-                //"(?=.*[a-z])" +         //at least 1 lower case letter
-                //"(?=.*[A-Z])" +         //at least 1 upper case letter
-                "(?=.*[a-zA-Z])" +      //any letter
-                "(?=.*[@#$%^&+=])" +    //at least 1 special character
-                "(?=\\S+$)" +           //no white spaces
-                ".{4,}" +               //at least 4 characters
+                //"(?=.*[0-9])" +         // at least 1 digit
+                //"(?=.*[a-z])" +         // at least 1 lower case letter
+                //"(?=.*[A-Z])" +         // at least 1 upper case letter
+                "(?=.*[a-zA-Z])" +        // any letter
+                "(?=.*[@#$%^&+=])" +      // at least 1 special character
+                "(?=\\S+$)" +             // no white spaces
+                ".{4,}" +                 // at least 4 characters
                 "$";
         if (val.isEmpty()) {
             password.setError("Field can not be empty");

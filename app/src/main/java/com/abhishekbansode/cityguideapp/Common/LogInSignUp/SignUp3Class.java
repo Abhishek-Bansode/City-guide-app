@@ -1,12 +1,15 @@
 package com.abhishekbansode.cityguideapp.Common.LogInSignUp;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Pair;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,11 +21,10 @@ public class SignUp3Class extends AppCompatActivity {
 
     // variables
     EditText phoneNumber;
-
     CountryCodePicker ccp;
     Button nextBtn3, loginBtn;
-
     ImageView backBtn;
+    TextView titleText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,19 +43,22 @@ public class SignUp3Class extends AppCompatActivity {
         loginBtn = findViewById(R.id.signup3_login_button);
         nextBtn3 = findViewById(R.id.signup_next_button_page3);
         backBtn = findViewById(R.id.signup3_back_button);
+        titleText = findViewById(R.id.signup_title_text);
+
+        // Add transition
+        Pair<View, String>[] pairs = new Pair[4];
+
+        pairs[0] = new Pair<>(backBtn, "transition_back_arrow_btn");
+        pairs[1] = new Pair<>(nextBtn3, "transition_next_btn");
+        pairs[2] = new Pair<>(loginBtn, "transition_login_btn");
+        pairs[3] = new Pair<>(titleText, "transition_title_text");
 
 
         // on click listeners
-        nextBtn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        nextBtn3.setOnClickListener(view ->  {
                 if (!ccp.isValidFullNumber()) {
                     phoneNumber.setError("Invalid phone number");
                     return;
-
-                    // Phone number is valid, proceed to the next screen
-//                    Intent intent = new Intent(SignUp3Class.this, VerifyOTP.class);
-//                    startActivity(intent);intent
                 }
 
                 // get all values passed from previous screen using Intent
@@ -64,12 +69,10 @@ public class SignUp3Class extends AppCompatActivity {
                 String _date = getIntent().getStringExtra("date");
                 String _gender = getIntent().getStringExtra("gender");
 
-
                 //get unformatted number with prefix "+" i.e "+14696641766"
                 final String _phoneNo = ccp.getFullNumberWithPlus();
 
                 Toast.makeText(SignUp3Class.this, _phoneNo, Toast.LENGTH_SHORT).show();
-
 
                 Intent intent = new Intent(SignUp3Class.this, VerifyOTP.class);
 
@@ -83,9 +86,10 @@ public class SignUp3Class extends AppCompatActivity {
                 intent.putExtra("phoneNo", _phoneNo);
                 intent.putExtra("whatToDO", "createNewUser"); // This is to identify that which action should OTP perform after verification.
 
-                startActivity(intent);
 
-            }
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, pairs);
+
+                startActivity(intent, options.toBundle());
         });
 
         backBtn.setOnClickListener(new View.OnClickListener() {

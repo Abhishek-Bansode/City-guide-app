@@ -28,7 +28,7 @@
 
             <group android:checkableBehavior="single">
                 <item
-                    android:icon="@drawable/login_icon"
+                    android:icon="@drawable/login_icon_regular_24"
                     android:title="@string/login" />
 
                 <item
@@ -36,7 +36,7 @@
                     android:title="@string/profile" />
 
                 <item
-                    android:icon="@drawable/logout_icon"
+                    android:icon="@drawable/logout_icon_regular_24"
                     android:title="@string/logout" />
 
             </group>

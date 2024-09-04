@@ -24,7 +24,6 @@ import java.util.Calendar;
 
 public class SignUp2Class extends AppCompatActivity {
 
-
     // Variables
     ImageView backBtn;
     Button nextBtn2, loginBtn;
@@ -48,16 +47,17 @@ public class SignUp2Class extends AppCompatActivity {
         datePicker = findViewById(age_picker);
 
         // Add transition
-        Pair[] pairs = new Pair[4];
+        Pair<View, String>[] pairs = new Pair[4];
+
         pairs[0] = new Pair<>(backBtn, "transition_back_arrow_btn");
         pairs[1] = new Pair<>(nextBtn2, "transition_next_btn");
         pairs[2] = new Pair<>(loginBtn, "transition_login_btn");
         pairs[3] = new Pair<>(titleText, "transition_title_text");
 
 
-//      calling SignUpScreen3 by next button
+        // calling SignUpScreen3 by next button
         nextBtn2.setOnClickListener(view -> {
-            if(!validateAge() | !validateGender()) {
+            if (!validateAge() | !validateGender()) {
                 Toast.makeText(this, "Something went wrong in signup screen 2", Toast.LENGTH_LONG).show();
                 return;
             }
@@ -72,11 +72,10 @@ public class SignUp2Class extends AppCompatActivity {
             String date = day + "/" + month + "/" + year;
 
             Intent intent = new Intent(SignUp2Class.this, SignUp3Class.class);
-//
-            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, pairs);
-            startActivity(intent, options.toBundle());
 
-            startActivity(intent);
+            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, pairs);
+
+            startActivity(intent, options.toBundle());
 
         });
 

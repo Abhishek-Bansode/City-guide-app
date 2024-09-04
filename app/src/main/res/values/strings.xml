@@ -104,7 +104,7 @@
     <string name="select_which_contact_detail_should_we_use_to_reset_your_password">Select which contact detail should we use to reset your password</string>
     <string name="mobile_icon_image">Mobile Icon Image</string>
     <string name="via_sms">Via Sms</string>
-    <string name="_4753388744">+4753388744</string>
+    <string name="_919475338874">+91 9475338874</string>
     <string name="sms_icon_image">SMS Icon Image</string>
     <string name="via_email">Via Email</string>
     <string name="support_gmail_com">support@gmail.com</string>
@@ -113,7 +113,7 @@
     <string name="new_credentials">New Credentials</string>
     <string name="your_identity_has_been_verified_set_your_new_password">Your identity has been verified! Set your new password</string>
     <string name="new_password">New Password</string>
-    <string name="confirm_password">Confirm password</string>
+    <string name="confirm_password">Confirm New Password</string>
     <string name="ok">OK</string>
     <string name="menu_icon_image">Menu Icon Image</string>
 

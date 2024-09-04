@@ -40,6 +40,7 @@ public class VerifyOTP extends AppCompatActivity {
     TextView otpDescriptionText;
     String fullName, phoneNo, email, username, password, date, gender, whatToDo;
     private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,27 +53,27 @@ public class VerifyOTP extends AppCompatActivity {
         verifyOTPBtn = findViewById(R.id.verify_btn);
         crossBtn = findViewById(R.id.back_to_signup_page);
 
-         fullName = getIntent().getStringExtra("fullName");
-         email = getIntent().getStringExtra("email");
-         username = getIntent().getStringExtra("username");
-         password = getIntent().getStringExtra("password");
-         date = getIntent().getStringExtra("date");
-         gender = getIntent().getStringExtra("gender");
-         phoneNo = getIntent().getStringExtra("phoneNo");
+        fullName = getIntent().getStringExtra("fullName");
+        email = getIntent().getStringExtra("email");
+        username = getIntent().getStringExtra("username");
+        password = getIntent().getStringExtra("password");
+        date = getIntent().getStringExtra("date");
+        gender = getIntent().getStringExtra("gender");
+        phoneNo = getIntent().getStringExtra("phoneNo");
 
 
+        // first check the call and then redirect the user accordingly to
+        // the profile or Set New Password Screen
         // on clicking verify button
-        verifyOTPBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        verifyOTPBtn.setOnClickListener(view ->  {
                 String code = Objects.requireNonNull(pinFromUser.getText()).toString();
+
                 if(!code.isEmpty()) {
                     verifyCode(code);
                     Toast.makeText(VerifyOTP.this, "OTP is verified", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(VerifyOTP.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
                 }
-            }
         });
 
         // button for navigating back to SignUp page
@@ -113,8 +114,13 @@ public class VerifyOTP extends AppCompatActivity {
         PhoneAuthProvider.verifyPhoneNumber(options);
     }
 
-
     private final PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+        @Override
+        public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+            super.onCodeSent(s, forceResendingToken);
+            codeBySystem = s;
+        }
+
         @Override
         public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
             String code = phoneAuthCredential.getSmsCode();
@@ -125,12 +131,6 @@ public class VerifyOTP extends AppCompatActivity {
         }
 
         @Override
-        public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-            super.onCodeSent(s, forceResendingToken);
-            codeBySystem = s;
-        }
-
-        @Override
         public void onVerificationFailed(@NonNull FirebaseException e) {
             Toast.makeText(VerifyOTP.this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -138,11 +138,10 @@ public class VerifyOTP extends AppCompatActivity {
 
     private void verifyCode(String code) {
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(codeBySystem, code);
-        signInUsingCredential(credential);
+        signInWithPhoneAuthCredential(credential);
     }
 
-
-    private void signInUsingCredential(PhoneAuthCredential credential) {
+    private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
         firebaseAuth.signInWithCredential(credential)
@@ -151,11 +150,13 @@ public class VerifyOTP extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
+                            Toast.makeText(VerifyOTP.this, "Verification Completed.", Toast.LENGTH_SHORT).show();
 
                             storeNewUserData();
 
                         } else {
                             // Sign in failed, display a message and update the UI
+                            // Log.w(TAG, "signInWithCredential:failure", task.getException());
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                                 // The verification code entered was invalid
                                 Toast.makeText(VerifyOTP.this, "Verification Not Completed! Try again.", Toast.LENGTH_SHORT).show();
