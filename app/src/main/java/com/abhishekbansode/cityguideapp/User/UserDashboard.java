@@ -1,6 +1,5 @@
 package com.abhishekbansode.cityguideapp.User;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
@@ -38,7 +37,6 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
     LinearLayout contentView;
     static final float END_SCALE = 0.5f;
     RecyclerView featuredRecycler, mostViewedRecycler, categoriesRecycler;
-    private GradientDrawable gradient1, gradient2, gradient3, gradient4;
     ImageView menuIcon, userLogInSignUpIcon;
 
     // Drawer Menu
@@ -64,7 +62,6 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
         contentView = findViewById(R.id.content);
         userLogInSignUpIcon = findViewById(R.id.userLogInIcon);
 
-
         // Menu Hooks
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigation_view);
@@ -76,14 +73,8 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
         mostViewedRecycler();
         categoriesRecycler();
 
-
         // ON Click -> CallRetailerScreen
-        userLogInSignUpIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), RetailerStartUpScreen.class));
-            }
-        });
+        userLogInSignUpIcon.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RetailerStartUpScreen.class)));
 
         // backPressed on main activity
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
@@ -96,27 +87,14 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
                 exitDialog.setMessage("Are you sure want to exit?");
                 exitDialog.setIcon(R.drawable.exit_from_app);
 
-                exitDialog.setPositiveButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(UserDashboard.this, "Welcome back!", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                exitDialog.setPositiveButton("No", (dialogInterface, i) -> Toast.makeText(UserDashboard.this, "Welcome back!", Toast.LENGTH_SHORT).show());
 
-                exitDialog.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        // Back is pressed... Finishing the activity
-                        finish();
-                    }
+                exitDialog.setNegativeButton("Yes", (dialogInterface, i) -> {
+                    // Back is pressed... Finishing the activity
+                    finish();
                 });
                 
-                exitDialog.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(UserDashboard.this, "Operation Cancelled!", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                exitDialog.setNeutralButton("Cancel", (dialogInterface, i) -> Toast.makeText(UserDashboard.this, "Operation Cancelled!", Toast.LENGTH_SHORT).show());
                 exitDialog.show();
             }
         });
@@ -130,13 +108,10 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.nav_home);
 
-        menuIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (drawerLayout.isDrawerVisible(GravityCompat.START)) {
-                    drawerLayout.closeDrawer(GravityCompat.START);
-                } else drawerLayout.openDrawer(GravityCompat.START);
-            }
+        menuIcon.setOnClickListener(view -> {
+            if (drawerLayout.isDrawerVisible(GravityCompat.START)) {
+                drawerLayout.closeDrawer(GravityCompat.START);
+            } else drawerLayout.openDrawer(GravityCompat.START);
         });
 
         animateNavigationDrawer();
@@ -144,7 +119,7 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
 
     private void animateNavigationDrawer() {
 
-        drawerLayout.setScrimColor(getResources().getColor(R.color.colorPrimary));
+        drawerLayout.setScrimColor(getResources().getColor(R.color.transparent, getTheme()));
         drawerLayout.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
             @Override
             public void onDrawerSlide(View drawerView, float slideOffset) {
@@ -190,10 +165,10 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
 
         // All Gradients for this view are
 
-        gradient1 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xff7adccf, 0xff7adccf});
-        gradient2 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xffd4cbe5, 0xffd4cbe5});
-        gradient3 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xfff7c59f, 0xFFf7c59f});
-        gradient4 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xffb8d7f5, 0xffb8d7f5});
+        GradientDrawable gradient1 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xff7adccf, 0xff7adccf});
+        GradientDrawable gradient2 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xffd4cbe5, 0xffd4cbe5});
+        GradientDrawable gradient3 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xfff7c59f, 0xFFf7c59f});
+        GradientDrawable gradient4 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xffb8d7f5, 0xffb8d7f5});
 
 
         ArrayList<CategoriesHelperClass> categoriesHelperClasses = new ArrayList<>();
@@ -218,10 +193,10 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
 
         ArrayList<MostViewedHelperClass> mostViewedLocations = new ArrayList<>();
 
-        mostViewedLocations.add(new MostViewedHelperClass(R.drawable.mcdonald_img, "McDonald's", "dhhsadbkdkadgagd"));
-        mostViewedLocations.add(new MostViewedHelperClass(R.drawable.city2, "Edenrobe", "dgdjdgdvmffhfjkfbfg"));
-        mostViewedLocations.add(new MostViewedHelperClass(R.drawable.restaurant_image, "J.", "hfhffftdbdhfufkvmfhfbdhd"));
-        mostViewedLocations.add(new MostViewedHelperClass(R.drawable.mcdonald_img, "Walmart", "dhdhdgdtfnfmvkjvhgsf"));
+        mostViewedLocations.add(new MostViewedHelperClass(R.drawable.mcdonald_img, "McDonald's", "demo description"));
+        mostViewedLocations.add(new MostViewedHelperClass(R.drawable.city2, "Edenrobe", "demo description"));
+        mostViewedLocations.add(new MostViewedHelperClass(R.drawable.restaurant_image, "J.", "demo description"));
+        mostViewedLocations.add(new MostViewedHelperClass(R.drawable.mcdonald_img, "Walmart", "demo description"));
 
         adapter = new MostViewedAdapter(mostViewedLocations);
         mostViewedRecycler.setAdapter(adapter);
@@ -230,7 +205,7 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
     private void featuredRecycler() {
 
         // All Gradients for this view are
-//        GradientDrawable gradient1 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xffeff400, 0xffaff600});
+        // GradientDrawable gradient1 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xffeff400, 0xffaff600});
 
         featuredRecycler.setHasFixedSize(true);
         featuredRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
@@ -244,11 +219,4 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
         adapter = new FeaturedAdapter(featuredLocations);
         featuredRecycler.setAdapter(adapter);
     }
-
-
-    // Normal functions
-    public void CallRetailerScreen(View view) {
-        startActivity(new Intent(getApplicationContext(), RetailerStartUpScreen.class));
-    }
-
 }

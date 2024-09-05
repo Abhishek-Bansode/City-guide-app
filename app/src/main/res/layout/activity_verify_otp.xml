@@ -10,8 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/back_to_signup_page"
@@ -52,32 +51,38 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="sans-serif"
             android:includeFontPadding="false"
             android:text="@string/enter_one_time_password_sent_on_your_phone"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
-        <com.chaos.view.PinView
-            android:id="@+id/pin_view"
-            style="@style/PinWidget.PinView"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="10dp"
-            android:cursorVisible="true"
-            android:inputType="number"
-            android:itemBackground="#65EAEAEA"
-            app:cursorColor="@color/black"
-            app:hideLineWhenFilled="true"
-            app:itemCount="6"
-            app:itemHeight="50dp"
-            app:itemRadius="5dp"
-            app:itemWidth="50dp"
-            app:lineColor="@color/colorAccent"
-            app:lineWidth="1dp" />
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+
+            <com.chaos.view.PinView
+                android:id="@+id/pin_view"
+                style="@style/PinWidget.PinView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:cursorVisible="true"
+                android:inputType="number"
+                android:itemBackground="#65EAEAEA"
+                app:cursorColor="@color/black"
+                app:hideLineWhenFilled="true"
+                app:itemCount="6"
+                app:itemHeight="45dp"
+                app:itemRadius="5dp"
+                app:itemWidth="45dp"
+                app:lineColor="@color/colorAccent"
+                app:lineWidth="1dp" />
+
+        </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/verify_btn"

@@ -47,10 +47,10 @@ public class SignUp extends AppCompatActivity {
         // Add transition
         Pair<View, String>[] pairs = new Pair[4];
 
-        pairs[0] = new Pair<>(backBtn, "transition_back_arrow_btn");
-        pairs[1] = new Pair<>(nextBtn1, "transition_next_btn");
-        pairs[2] = new Pair<>(loginBtn, "transition_login_btn");
-        pairs[3] = new Pair<>(titleText, "transition_title_text");
+        pairs[0] = Pair.create(backBtn, "transition_back_arrow_btn");
+        pairs[1] = Pair.create(nextBtn1, "transition_next_btn");
+        pairs[2] = Pair.create(loginBtn, "transition_login_btn");
+        pairs[3] = Pair.create(titleText, "transition_title_text");
 
 
         // calling SignUpScreen2 by next button
@@ -65,20 +65,14 @@ public class SignUp extends AppCompatActivity {
             startActivity(intent, options.toBundle());
         });
 
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SignUp.this, RetailerStartUpScreen.class);
-                startActivity(intent);
-            }
+        backBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(SignUp.this, RetailerStartUpScreen.class);
+            startActivity(intent);
         });
 
-        loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SignUp.this, Login.class);
-                startActivity(intent);
-            }
+        loginBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(SignUp.this, Login.class);
+            startActivity(intent);
         });
     }
 

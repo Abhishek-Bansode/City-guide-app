@@ -15,11 +15,13 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.abhishekbansode.cityguideapp.R;
+import com.google.android.material.textfield.TextInputLayout;
 import com.hbb20.CountryCodePicker;
 
 public class SignUp3Class extends AppCompatActivity {
 
     // variables
+    TextInputLayout phoneNumberLayout;
     EditText phoneNumber;
     CountryCodePicker ccp;
     Button nextBtn3, loginBtn;
@@ -33,8 +35,9 @@ public class SignUp3Class extends AppCompatActivity {
         setContentView(R.layout.activity_retailer_sign_up_3);
 
         // Bind CCP and Carrier Number editText from layout
-        ccp = (CountryCodePicker) findViewById(R.id.cpp);
-        phoneNumber = (EditText) findViewById(R.id.signup_phone_number);
+        ccp =  findViewById(R.id.cpp);
+        phoneNumberLayout = findViewById(R.id.signup_phone_number);
+        phoneNumber = phoneNumberLayout.getEditText();
 
         // Attach CarrierNumber editText to CCP
         ccp.registerCarrierNumberEditText(phoneNumber);
@@ -48,10 +51,10 @@ public class SignUp3Class extends AppCompatActivity {
         // Add transition
         Pair<View, String>[] pairs = new Pair[4];
 
-        pairs[0] = new Pair<>(backBtn, "transition_back_arrow_btn");
-        pairs[1] = new Pair<>(nextBtn3, "transition_next_btn");
-        pairs[2] = new Pair<>(loginBtn, "transition_login_btn");
-        pairs[3] = new Pair<>(titleText, "transition_title_text");
+        pairs[0] = Pair.create(backBtn, "transition_back_arrow_btn");
+        pairs[1] = Pair.create(nextBtn3, "transition_next_btn");
+        pairs[2] = Pair.create(loginBtn, "transition_login_btn");
+        pairs[3] = Pair.create(titleText, "transition_title_text");
 
 
         // on click listeners
@@ -92,20 +95,14 @@ public class SignUp3Class extends AppCompatActivity {
                 startActivity(intent, options.toBundle());
         });
 
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SignUp3Class.this, SignUp2Class.class);
-                startActivity(intent);
-            }
+        backBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(SignUp3Class.this, SignUp2Class.class);
+            startActivity(intent);
         });
 
-        loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SignUp3Class.this, Login.class);
-                startActivity(intent);
-            }
+        loginBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(SignUp3Class.this, Login.class);
+            startActivity(intent);
         });
     }
 }

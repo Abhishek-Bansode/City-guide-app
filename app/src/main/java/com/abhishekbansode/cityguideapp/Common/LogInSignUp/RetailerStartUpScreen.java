@@ -3,7 +3,6 @@ package com.abhishekbansode.cityguideapp.Common.LogInSignUp;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
@@ -24,57 +23,25 @@ public class RetailerStartUpScreen extends AppCompatActivity {
         logIn = findViewById(R.id.login_btn);
 
         // on click actions
-        logIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Login.class);
+        logIn.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), Login.class);
 
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation
-                        (RetailerStartUpScreen
-                                .this, android.util.Pair.create(logIn, "transition_login"));
+            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation
+                    (RetailerStartUpScreen.this, android.util.Pair.create(logIn, "transition_login"));
 
-                // Start the new activity
-                startActivity(intent, options.toBundle());
-            }
+            // Start the new activity
+            startActivity(intent, options.toBundle());
         });
 
-        signUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SignUp.class);
+        signUp.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), SignUp.class);
 
-                // new way to do this - transition animation
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation
-                        (RetailerStartUpScreen
-                                .this, android.util.Pair.create(signUp, "transition_login"));
+            // new way to do this - transition animation
+            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation
+                    (RetailerStartUpScreen.this, android.util.Pair.create(signUp, "transition_login"));
 
-                // Start the new activity
-                startActivity(intent, options.toBundle());
-            }
+            // Start the new activity
+            startActivity(intent, options.toBundle());
         });
-    }
-
-    public void CallLogInScreen(View view) {
-//        Intent intent = new Intent(getApplicationContext(), Login.class);
-//
-//        Pair[] pairs = new Pair[1];
-//
-//        pairs[0] = new Pair<View, String>(findViewById(R.id.login_btn), "transition_login");
-
-//        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(RetailerStartUpScreen.this,Login.class,"transition_login");
-
-//        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
-    }
-
-    public void CallSignUpScreen(View view) {
-//        Intent intent = new Intent(getApplicationContext(), SignUp.class);
-
-//        Pair[] pairs = new Pair[1];
-//
-//        pairs[0] = new Pair<View, String>(findViewById(R.id.signUp_btn), "transition_login");
-
-//        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(RetailerStartUpScreen.this,Login.class,"transition_login");
-
-//        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
     }
 }

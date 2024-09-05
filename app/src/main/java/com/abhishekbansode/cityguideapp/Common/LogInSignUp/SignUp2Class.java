@@ -11,7 +11,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,7 +28,7 @@ public class SignUp2Class extends AppCompatActivity {
     Button nextBtn2, loginBtn;
     TextView titleText;
     RadioGroup radioGroup;
-    RadioButton selectGender;
+//    RadioButton selectGender;
     DatePicker datePicker;
 
     @Override
@@ -49,10 +48,10 @@ public class SignUp2Class extends AppCompatActivity {
         // Add transition
         Pair<View, String>[] pairs = new Pair[4];
 
-        pairs[0] = new Pair<>(backBtn, "transition_back_arrow_btn");
-        pairs[1] = new Pair<>(nextBtn2, "transition_next_btn");
-        pairs[2] = new Pair<>(loginBtn, "transition_login_btn");
-        pairs[3] = new Pair<>(titleText, "transition_title_text");
+        pairs[1] = Pair.create(nextBtn2, "transition_next_btn");
+        pairs[0] = Pair.create(backBtn, "transition_back_arrow_btn");
+        pairs[2] = Pair.create(loginBtn, "transition_login_btn");
+        pairs[3] = Pair.create(titleText, "transition_title_text");
 
 
         // calling SignUpScreen3 by next button
@@ -62,14 +61,14 @@ public class SignUp2Class extends AppCompatActivity {
                 return;
             }
 
-            selectGender = findViewById(radioGroup.getCheckedRadioButtonId());
-            String gender = selectGender.getText().toString();
+//            selectGender = findViewById(radioGroup.getCheckedRadioButtonId());
+//            String gender = selectGender.getText().toString();
 
-            int day = datePicker.getDayOfMonth();
-            int month = datePicker.getMonth();
-            int year = datePicker.getYear();
-
-            String date = day + "/" + month + "/" + year;
+//            int day = datePicker.getDayOfMonth();
+//            int month = datePicker.getMonth();
+//            int year = datePicker.getYear();
+//
+//            String date = day + "/" + month + "/" + year;
 
             Intent intent = new Intent(SignUp2Class.this, SignUp3Class.class);
 
@@ -80,20 +79,14 @@ public class SignUp2Class extends AppCompatActivity {
         });
 
 
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SignUp2Class.this, SignUp.class);
-                startActivity(intent);
-            }
+        backBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(SignUp2Class.this, SignUp.class);
+            startActivity(intent);
         });
 
-        loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SignUp2Class.this, Login.class);
-                startActivity(intent);
-            }
+        loginBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(SignUp2Class.this, Login.class);
+            startActivity(intent);
         });
     }
 

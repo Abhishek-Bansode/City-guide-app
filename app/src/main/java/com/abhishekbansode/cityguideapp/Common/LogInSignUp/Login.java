@@ -1,6 +1,5 @@
 package com.abhishekbansode.cityguideapp.Common.LogInSignUp;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.Network;
@@ -56,95 +55,81 @@ public class Login extends AppCompatActivity {
 
 
         // On-Click listeners
-        logInBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        logInBtn.setOnClickListener(view -> {
 
-                if (!isConnected((Login) getApplicationContext())) {
-                    showCustomDialog();
-                }
+            if (!isConnected((Login) getApplicationContext())) {
+                showCustomDialog();
+            }
 
-                if (!validateFields()) {
-                    return;
-                }
+            if (!validateFields()) {
+                return;
+            }
 
-                // progress bar
-                progressbar.setVisibility(View.VISIBLE);
+            // progress bar
+            progressbar.setVisibility(View.VISIBLE);
 
-                // get data
-                String _phoneNumber = Objects.requireNonNull(phoneNumber.getEditText()).getText().toString().trim();
-                String _password = Objects.requireNonNull(password.getEditText()).getText().toString().trim();
+            // get data
+            String _phoneNumber = Objects.requireNonNull(phoneNumber.getEditText()).getText().toString().trim();
+            String _password = Objects.requireNonNull(password.getEditText()).getText().toString().trim();
 
-                if (_phoneNumber.charAt(0) == '0') {
-                    _phoneNumber = _phoneNumber.substring(1);
-                }
-                String _completePhoneNumber = "+" + countryCodePicker.getFullNumber() + _phoneNumber;
+            if (_phoneNumber.charAt(0) == '0') {
+                _phoneNumber = _phoneNumber.substring(1);
+            }
+            String _completePhoneNumber = "+" + countryCodePicker.getFullNumber() + _phoneNumber;
 
-                // Database
-                Query checkUser = FirebaseDatabase.getInstance().getReference("Users").orderByChild("phoneNo").equalTo(_completePhoneNumber);
+            // Database
+            Query checkUser = FirebaseDatabase.getInstance().getReference("Users").orderByChild("phoneNo").equalTo(_completePhoneNumber);
 
-                checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if (snapshot.exists()) {
-                            phoneNumber.setError(null);
-                            phoneNumber.setErrorEnabled(false);
+            checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+                        phoneNumber.setError(null);
+                        phoneNumber.setErrorEnabled(false);
 
-                            String systemPassword = snapshot.child(_completePhoneNumber).child("password").getValue(String.class);
-                            assert systemPassword != null;
-                            if (systemPassword.equals(_password)) {
-                                password.setError(null);
-                                password.setErrorEnabled(false);
+                        String systemPassword = snapshot.child(_completePhoneNumber).child("password").getValue(String.class);
+                        assert systemPassword != null;
+                        if (systemPassword.equals(_password)) {
+                            password.setError(null);
+                            password.setErrorEnabled(false);
 
-                                // data showing
-                                String _fullName = snapshot.child(_completePhoneNumber).child("fullName").getValue(String.class);
-                                String _email = snapshot.child(_completePhoneNumber).child("email").getValue(String.class);
-                                String _phoneNo = snapshot.child(_completePhoneNumber).child("phoneNo").getValue(String.class);
-                                String _dataOfBirth = snapshot.child(_completePhoneNumber).child("date").getValue(String.class);
+                            // data showing
+                            String _fullName = snapshot.child(_completePhoneNumber).child("fullName").getValue(String.class);
+                            String _email = snapshot.child(_completePhoneNumber).child("email").getValue(String.class);
+                            String _phoneNo = snapshot.child(_completePhoneNumber).child("phoneNo").getValue(String.class);
+                            String _dataOfBirth = snapshot.child(_completePhoneNumber).child("date").getValue(String.class);
 
-                                Toast.makeText(Login.this, _fullName + "\n" + _email + "\n" + _phoneNo + "\n" + _dataOfBirth, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, _fullName + "\n" + _email + "\n" + _phoneNo + "\n" + _dataOfBirth, Toast.LENGTH_SHORT).show();
 
-                            } else {
-                                progressbar.setVisibility(View.GONE);
-                                Toast.makeText(Login.this, "Password does not exists", Toast.LENGTH_SHORT).show();
-                            }
                         } else {
                             progressbar.setVisibility(View.GONE);
-                            Toast.makeText(Login.this, "No such user exists", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, "Password does not exists", Toast.LENGTH_SHORT).show();
                         }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
+                    } else {
                         progressbar.setVisibility(View.GONE);
-                        Toast.makeText(Login.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this, "No such user exists", Toast.LENGTH_SHORT).show();
                     }
-                });
-            }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    progressbar.setVisibility(View.GONE);
+                    Toast.makeText(Login.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
         });
 
         // function to call the forget password screen
-        forgetPasswordBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ForgetPassword.class));
-            }
+        forgetPasswordBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ForgetPassword.class)));
+
+        backBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(Login.this, RetailerStartUpScreen.class);
+            startActivity(intent);
         });
 
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Login.this, RetailerStartUpScreen.class);
-                startActivity(intent);
-            }
-        });
-
-        createAccountBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Login.this, SignUp.class);
-                startActivity(intent);
-            }
+        createAccountBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(Login.this, SignUp.class);
+            startActivity(intent);
         });
     }
 
@@ -152,16 +137,9 @@ public class Login extends AppCompatActivity {
         ConnectivityManager connectivityManager = (ConnectivityManager) login.getSystemService(CONNECTIVITY_SERVICE);
 
         NetworkCapabilities networkCapabilities = null;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
-            Network network = connectivityManager.getActiveNetwork();
-            if (network != null) {
-                networkCapabilities = connectivityManager.getNetworkCapabilities(network);
-            }
-        } else {
-            NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-            if (networkInfo != null) {
-                return networkInfo.isConnected();
-            }
+        Network network = connectivityManager.getActiveNetwork();
+        if (network != null) {
+            networkCapabilities = connectivityManager.getNetworkCapabilities(network);
         }
 
         return networkCapabilities != null && (networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)
@@ -184,18 +162,10 @@ public class Login extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);
         builder.setMessage("Please connect to the internet to proceed further")
                 .setCancelable(false)
-                .setPositiveButton("Connect", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
-                    }
-                })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        startActivity(new Intent(getApplicationContext(), RetailerStartUpScreen.class));
-                        finish();
-                    }
+                .setPositiveButton("Connect", (dialogInterface, i) -> startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS)))
+                .setNegativeButton("Cancel", (dialogInterface, i) -> {
+                    startActivity(new Intent(getApplicationContext(), RetailerStartUpScreen.class));
+                    finish();
                 });
     }
 
@@ -220,7 +190,11 @@ public class Login extends AppCompatActivity {
             return false;
         } else {
             // condition is remaining
+            CharSequence text = "There's nothing to Worry";
+            int duration = Toast.LENGTH_SHORT;
 
+            Toast toast = Toast.makeText(this, text, duration);
+            toast.show();
         }
         return true;
     }

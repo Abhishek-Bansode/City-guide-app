@@ -16,6 +16,7 @@
 
         <!-- Media -->
         <ImageView
+            android:id="@+id/mv_image"
             android:layout_width="match_parent"
             android:layout_height="194dp"
             android:contentDescription="@string/demo_desc"
@@ -30,6 +31,7 @@
 
             <!-- Title, secondary and supporting text -->
             <TextView
+                android:id="@+id/mv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/new_york_city"
@@ -48,13 +50,6 @@
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/demo_desc"
-                android:textAppearance="?attr/textAppearanceBody2"
-                android:textColor="?android:attr/textColorSecondary" />
         </LinearLayout>
 
         <!-- Buttons -->

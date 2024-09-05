@@ -19,11 +19,6 @@ public class AllCategories extends AppCompatActivity {
         // Hooks
         backBtn = findViewById(R.id.back_pressed);
 
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AllCategories.super.onBackPressed();
-            }
-        });
+        backBtn.setOnClickListener(view -> AllCategories.super.onBackPressed());
     }
 }
