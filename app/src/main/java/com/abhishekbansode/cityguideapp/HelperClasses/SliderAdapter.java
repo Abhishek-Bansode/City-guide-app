@@ -1,4 +1,4 @@
-package com.abhishekbansode.cityguideapp.helperClasses;
+package com.abhishekbansode.cityguideapp.HelperClasses;
 
 import android.content.Context;
 import android.view.LayoutInflater;

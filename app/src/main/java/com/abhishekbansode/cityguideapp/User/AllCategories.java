@@ -1,4 +1,4 @@
-package com.abhishekbansode.cityguideapp.user;
+package com.abhishekbansode.cityguideapp.User;
 
 import android.os.Bundle;
 import android.widget.ImageView;

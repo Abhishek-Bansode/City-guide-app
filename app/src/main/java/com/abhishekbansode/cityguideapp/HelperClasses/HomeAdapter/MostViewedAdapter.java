@@ -1,4 +1,4 @@
-package com.abhishekbansode.cityguideapp.helperClasses.HomeAdapter;
+package com.abhishekbansode.cityguideapp.HelperClasses.HomeAdapter;
 
 
 import android.util.Log;

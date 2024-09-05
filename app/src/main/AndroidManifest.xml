@@ -14,43 +14,43 @@
         tools:targetApi="31">
 
         <activity
-            android:name=".common.logInSignUp.VerifyOTP"
+            android:name=".Common.LogInSignUp.VerifyOTP"
             android:exported="false" />
         <activity
-            android:name=".common.logInSignUp.SetNewPassword"
+            android:name=".Common.LogInSignUp.SetNewPassword"
             android:exported="false" />
         <activity
-            android:name=".common.logInSignUp.ForgetPasswordSuccessMessage"
+            android:name=".Common.LogInSignUp.ForgetPasswordSuccessMessage"
             android:exported="false" />
         <activity
-            android:name=".common.logInSignUp.MakeSelection"
+            android:name=".Common.LogInSignUp.MakeSelection"
             android:exported="false" />
         <activity
-            android:name=".common.logInSignUp.ForgetPassword"
+            android:name=".Common.LogInSignUp.ForgetPassword"
             android:exported="false" />
         <activity
-            android:name=".common.logInSignUp.SignUp3Class"
+            android:name=".Common.LogInSignUp.SignUp3Class"
             android:exported="false" />
         <activity
-            android:name=".common.logInSignUp.SignUp2Class"
+            android:name=".Common.LogInSignUp.SignUp2Class"
             android:exported="false" />
         <activity
-            android:name=".common.logInSignUp.SignUp"
+            android:name=".Common.LogInSignUp.SignUp"
             android:exported="false" />
         <activity
-            android:name=".common.logInSignUp.Login"
+            android:name=".Common.LogInSignUp.Login"
             android:exported="false" />
         <activity
-            android:name=".common.logInSignUp.RetailerStartUpScreen"
+            android:name=".Common.LogInSignUp.RetailerStartUpScreen"
             android:exported="false" />
         <activity
-            android:name=".user.AllCategories"
+            android:name=".User.AllCategories"
             android:exported="false" />
         <activity
-            android:name=".common.OnBoarding"
+            android:name=".Common.OnBoarding"
             android:exported="false" />
         <activity
-            android:name=".common.SplashScreen"
+            android:name=".Common.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -58,7 +58,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".user.UserDashboard" />
+        <activity android:name=".User.UserDashboard" />
     </application>
 
 </manifest>
