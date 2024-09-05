@@ -1,4 +1,4 @@
-package com.abhishekbansode.cityguideapp.Common.LogInSignUp;
+package com.abhishekbansode.cityguideapp.common.logInSignUp;
 
 import static com.abhishekbansode.cityguideapp.R.id.age_picker;
 

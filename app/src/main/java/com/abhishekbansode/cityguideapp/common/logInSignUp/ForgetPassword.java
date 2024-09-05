@@ -1,4 +1,4 @@
-package com.abhishekbansode.cityguideapp.Common.LogInSignUp;
+package com.abhishekbansode.cityguideapp.common.logInSignUp;
 
 import android.os.Bundle;
 import android.view.WindowManager;

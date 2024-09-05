@@ -1,4 +1,4 @@
-package com.abhishekbansode.cityguideapp.Databases;
+package com.abhishekbansode.cityguideapp.databases;
 
 public class UserHelperClass {
 

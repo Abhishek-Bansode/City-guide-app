@@ -1,4 +1,4 @@
-package com.abhishekbansode.cityguideapp.HelperClasses.HomeAdapter;
+package com.abhishekbansode.cityguideapp.helperClasses.HomeAdapter;
 
 public class FeaturedHelperClass {
 

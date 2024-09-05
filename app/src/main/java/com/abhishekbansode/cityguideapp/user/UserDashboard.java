@@ -1,4 +1,4 @@
-package com.abhishekbansode.cityguideapp.User;
+package com.abhishekbansode.cityguideapp.user;
 
 import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
@@ -19,13 +19,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.abhishekbansode.cityguideapp.Common.LogInSignUp.RetailerStartUpScreen;
-import com.abhishekbansode.cityguideapp.HelperClasses.HomeAdapter.CategoriesAdapter;
-import com.abhishekbansode.cityguideapp.HelperClasses.HomeAdapter.CategoriesHelperClass;
-import com.abhishekbansode.cityguideapp.HelperClasses.HomeAdapter.FeaturedAdapter;
-import com.abhishekbansode.cityguideapp.HelperClasses.HomeAdapter.FeaturedHelperClass;
-import com.abhishekbansode.cityguideapp.HelperClasses.HomeAdapter.MostViewedAdapter;
-import com.abhishekbansode.cityguideapp.HelperClasses.HomeAdapter.MostViewedHelperClass;
+import com.abhishekbansode.cityguideapp.common.logInSignUp.RetailerStartUpScreen;
+import com.abhishekbansode.cityguideapp.helperClasses.HomeAdapter.CategoriesAdapter;
+import com.abhishekbansode.cityguideapp.helperClasses.HomeAdapter.CategoriesHelperClass;
+import com.abhishekbansode.cityguideapp.helperClasses.HomeAdapter.FeaturedAdapter;
+import com.abhishekbansode.cityguideapp.helperClasses.HomeAdapter.FeaturedHelperClass;
+import com.abhishekbansode.cityguideapp.helperClasses.HomeAdapter.MostViewedAdapter;
+import com.abhishekbansode.cityguideapp.helperClasses.HomeAdapter.MostViewedHelperClass;
 import com.abhishekbansode.cityguideapp.R;
 import com.google.android.material.navigation.NavigationView;
 

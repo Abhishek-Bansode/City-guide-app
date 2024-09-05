@@ -1,4 +1,4 @@
-package com.abhishekbansode.cityguideapp.Common;
+package com.abhishekbansode.cityguideapp.common;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -14,7 +14,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.abhishekbansode.cityguideapp.R;
-import com.abhishekbansode.cityguideapp.User.UserDashboard;
+import com.abhishekbansode.cityguideapp.user.UserDashboard;
 
 @SuppressLint("CustomSplashScreen")
 public class SplashScreen extends AppCompatActivity {

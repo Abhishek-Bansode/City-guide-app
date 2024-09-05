@@ -1,4 +1,4 @@
-package com.abhishekbansode.cityguideapp.Common.LogInSignUp;
+package com.abhishekbansode.cityguideapp.common.logInSignUp;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.abhishekbansode.cityguideapp.Databases.UserHelperClass;
+import com.abhishekbansode.cityguideapp.databases.UserHelperClass;
 import com.abhishekbansode.cityguideapp.R;
 import com.chaos.view.PinView;
 import com.google.firebase.FirebaseException;
