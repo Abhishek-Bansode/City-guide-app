@@ -56,6 +56,7 @@ public class VerifyOTP extends AppCompatActivity {
         date = getIntent().getStringExtra("date");
         gender = getIntent().getStringExtra("gender");
         phoneNo = getIntent().getStringExtra("phoneNo");
+        whatToDo = getIntent().getStringExtra("whatToDo");
 
 
         // first check the call and then redirect the user accordingly to
@@ -76,6 +77,7 @@ public class VerifyOTP extends AppCompatActivity {
         crossBtn.setOnClickListener(view -> {
             Intent intent = new Intent(VerifyOTP.this, SignUp.class);
             startActivity(intent);
+            finish();
         });
 
         // Initialize the FireBase Auth
@@ -143,7 +145,13 @@ public class VerifyOTP extends AppCompatActivity {
                         // Sign in success, update UI with the signed-in user's information
                         Toast.makeText(VerifyOTP.this, "Verification Completed.", Toast.LENGTH_SHORT).show();
 
-                        storeNewUserData();
+                        // now verification is successful, add the data or update the old user
+                        if (whatToDo.equals("updateData")) {
+                            updateOldUserData();
+                        } else {
+                            // Add new User to the Database
+                            storeNewUserData();
+                        }
 
                     } else {
                         // Sign in failed, display a message and update the UI
@@ -153,6 +161,14 @@ public class VerifyOTP extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    private void updateOldUserData() {
+        Intent intent = new Intent(getApplicationContext(), SetNewPassword.class);
+        intent.putExtra("phoneNo", phoneNo);
+
+        startActivity(intent);
+        finish();
     }
 
     private void storeNewUserData() {

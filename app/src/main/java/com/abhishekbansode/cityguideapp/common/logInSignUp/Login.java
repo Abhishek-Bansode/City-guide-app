@@ -57,7 +57,7 @@ public class Login extends AppCompatActivity {
         // On-Click listeners
         logInBtn.setOnClickListener(view -> {
 
-            if (!isConnected((Login) getApplicationContext())) {
+            if (!isConnected1((Login) getApplicationContext())) {
                 showCustomDialog();
             }
 
@@ -79,7 +79,6 @@ public class Login extends AppCompatActivity {
 
             // Database
             Query checkUser = FirebaseDatabase.getInstance().getReference("Users").orderByChild("phoneNo").equalTo(_completePhoneNumber);
-
             checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -99,7 +98,7 @@ public class Login extends AppCompatActivity {
                             String _phoneNo = snapshot.child(_completePhoneNumber).child("phoneNo").getValue(String.class);
                             String _dataOfBirth = snapshot.child(_completePhoneNumber).child("date").getValue(String.class);
 
-                            Toast.makeText(Login.this, _fullName + "\n" + _email + "\n" + _phoneNo + "\n" + _dataOfBirth, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, _fullName + "\n" + _email + "\n" + _phoneNo + "\n" + _dataOfBirth, Toast.LENGTH_LONG).show();
 
                         } else {
                             progressbar.setVisibility(View.GONE);
@@ -120,7 +119,10 @@ public class Login extends AppCompatActivity {
         });
 
         // function to call the forget password screen
-        forgetPasswordBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ForgetPassword.class)));
+        forgetPasswordBtn.setOnClickListener(view ->  {
+            Intent intent = new Intent(this, ForgetPassword.class);
+            startActivity(intent);
+        });
 
         backBtn.setOnClickListener(view -> {
             Intent intent = new Intent(Login.this, RetailerStartUpScreen.class);
@@ -133,6 +135,7 @@ public class Login extends AppCompatActivity {
         });
     }
 
+    // check the device is connected to internet or not
     private boolean isConnected1(Login login) {
         ConnectivityManager connectivityManager = (ConnectivityManager) login.getSystemService(CONNECTIVITY_SERVICE);
 
@@ -169,11 +172,6 @@ public class Login extends AppCompatActivity {
                 });
     }
 
-
-    public void forgetPasswordScreen(View view) {
-        Intent intent = new Intent(getApplicationContext(), ForgetPassword.class);
-        startActivity(intent);
-    }
 
     // fields validations
     private boolean validateFields() {

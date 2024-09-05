@@ -99,7 +99,7 @@
     <string name="next">Next</string>
     <string name="password_updated">Password Updated</string>
     <string name="done_icon_image">Done Icon Image</string>
-    <string name="your_password_has_been_updated_successfully">Your password has been updated Successfully</string>
+    <string name="your_password_has_been_updated_successfully">Your password has been updated Successfully.</string>
     <string name="make_selection">Make Selection</string>
     <string name="select_which_contact_detail_should_we_use_to_reset_your_password">Select which contact detail should we use to reset your password</string>
     <string name="mobile_icon_image">Mobile Icon Image</string>
@@ -111,7 +111,7 @@
     <string name="bold_circle_image">Bold Circle Image</string>
     <string name="password_icon_image">Password Icon Image</string>
     <string name="new_credentials">New Credentials</string>
-    <string name="your_identity_has_been_verified_set_your_new_password">Your identity has been verified! Set your new password</string>
+    <string name="your_identity_has_been_verified_set_your_new_password">Your identity has been verified!\nSet your new password</string>
     <string name="new_password">New Password</string>
     <string name="confirm_password">Confirm New Password</string>
     <string name="ok">OK</string>
@@ -120,4 +120,8 @@
     <string name="new_york_city">New York City</string>
     <string name="action_1">ACTION 1</string>
     <string name="action_2">ACTION 2</string>
+    <string name="_1_3">1/3</string>
+    <string name="_2_3">2/3</string>
+    <string name="_3_3">3/3</string>
+    <string name="update">Update</string>
 </resources>

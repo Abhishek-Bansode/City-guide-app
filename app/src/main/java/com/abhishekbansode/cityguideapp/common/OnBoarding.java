@@ -106,7 +106,7 @@ public class OnBoarding extends AppCompatActivity {
 
             } else {
                 // for using animation to letsGetStarted btn
-                animation = AnimationUtils.loadAnimation(OnBoarding.this, R.anim.bottom_anim);
+                animation = AnimationUtils.loadAnimation(OnBoarding.this, R.anim.bottom_animation);
                 letsGetStarted.setAnimation(animation);
                 letsGetStarted.setVisibility(View.VISIBLE);
             }

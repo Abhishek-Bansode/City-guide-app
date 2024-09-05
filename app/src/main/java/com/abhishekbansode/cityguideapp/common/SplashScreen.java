@@ -43,8 +43,8 @@ public class SplashScreen extends AppCompatActivity {
         poweredByLine = findViewById(R.id.powered_by);
 
         // Animations
-        sideAnim = AnimationUtils.loadAnimation(this, R.anim.side_anim);
-        bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_anim);
+        sideAnim = AnimationUtils.loadAnimation(this, R.anim.slide_animation);
+        bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
 
         // set animations on elements
         backgroundImage.setAnimation(sideAnim);
