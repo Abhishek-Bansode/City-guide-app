@@ -65,6 +65,7 @@
                 app:startIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/login_phone_number_editText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/black_border"
@@ -88,6 +89,7 @@
                 app:startIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/login_password_editText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/black_border"
@@ -138,7 +140,6 @@
                 android:background="@drawable/custom_btn_bg"
                 android:text="@string/login"
                 android:textColor="@color/black" />
-
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/create_acc_btn"

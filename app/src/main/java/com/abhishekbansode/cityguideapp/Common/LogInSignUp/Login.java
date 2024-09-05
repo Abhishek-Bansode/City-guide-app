@@ -10,6 +10,7 @@ import android.provider.Settings;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -18,7 +19,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.abhishekbansode.cityguideapp.Databases.SessionManager;
+import com.abhishekbansode.cityguideapp.LocationOwner.RetailerDashboard;
 import com.abhishekbansode.cityguideapp.R;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,6 +31,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.hbb20.CountryCodePicker;
 
+import java.util.HashMap;
 import java.util.Objects;
 
 public class Login extends AppCompatActivity {
@@ -37,6 +42,8 @@ public class Login extends AppCompatActivity {
     CountryCodePicker countryCodePicker;
     TextInputLayout phoneNumber, password;
     ProgressBar progressbar;
+    CheckBox rememberMe;
+    TextInputEditText phoneNumberEditText, passwordEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +59,23 @@ public class Login extends AppCompatActivity {
         phoneNumber = findViewById(R.id.login_phone_number);
         password = findViewById(R.id.login_password);
         progressbar = findViewById(R.id.login_progress_bar);
+        rememberMe = findViewById(R.id.remember_me);
+        phoneNumberEditText = findViewById(R.id.login_phone_number_editText);
+        passwordEditText = findViewById(R.id.login_password_editText);
+
+        // Check whether Phone-Number and Password is already saved in Shared Preferences or Not
+        SessionManager sessionManager = new SessionManager(Login.this, SessionManager.SESSION_REMEMBERME);
+        if (sessionManager.checkRememberMe()) {
+            HashMap<String, String> rememberMeDetails = sessionManager.getRememberMeDetailsFromSession();
+
+            // Set the values for phoneNumber and password
+            phoneNumberEditText.setText(rememberMeDetails.get(SessionManager.KEY_SESSION_PHONENUMBER));
+            passwordEditText.setText(rememberMeDetails.get(SessionManager.KEY_SESSION_PASSWORD));
+        }
 
 
         // On-Click listeners
         logInBtn.setOnClickListener(view -> {
-
             if (!isConnected1((Login) getApplicationContext())) {
                 showCustomDialog();
             }
@@ -68,16 +87,22 @@ public class Login extends AppCompatActivity {
             // progress bar
             progressbar.setVisibility(View.VISIBLE);
 
-            // get data
+            // get values from fields
             String _phoneNumber = Objects.requireNonNull(phoneNumber.getEditText()).getText().toString().trim();
             String _password = Objects.requireNonNull(password.getEditText()).getText().toString().trim();
 
+            // remove '0' at the start if entered by the User
             if (_phoneNumber.charAt(0) == '0') {
                 _phoneNumber = _phoneNumber.substring(1);
             }
             String _completePhoneNumber = "+" + countryCodePicker.getFullNumber() + _phoneNumber;
 
-            // Database
+            if (rememberMe.isChecked()) {
+                // As this session is already defined in this scope
+                sessionManager.createRememberMeSession(_phoneNumber, _password);
+            }
+
+            // Check whether User exists or not in Firebase Database
             Query checkUser = FirebaseDatabase.getInstance().getReference("Users").orderByChild("phoneNo").equalTo(_completePhoneNumber);
             checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
@@ -92,13 +117,20 @@ public class Login extends AppCompatActivity {
                             password.setError(null);
                             password.setErrorEnabled(false);
 
-                            // data showing
-                            String _fullName = snapshot.child(_completePhoneNumber).child("fullName").getValue(String.class);
+                            // Get User data from Firebase Database
+                            String _fullname = snapshot.child(_completePhoneNumber).child("fullName").getValue(String.class);
+                            String _username = snapshot.child(_completePhoneNumber).child("username").getValue(String.class);
                             String _email = snapshot.child(_completePhoneNumber).child("email").getValue(String.class);
                             String _phoneNo = snapshot.child(_completePhoneNumber).child("phoneNo").getValue(String.class);
+                            String _password = snapshot.child(_completePhoneNumber).child("password").getValue(String.class);
                             String _dataOfBirth = snapshot.child(_completePhoneNumber).child("date").getValue(String.class);
+                            String _gender = snapshot.child(_completePhoneNumber).child("gender").getValue(String.class);
 
-                            Toast.makeText(Login.this, _fullName + "\n" + _email + "\n" + _phoneNo + "\n" + _dataOfBirth, Toast.LENGTH_LONG).show();
+                            // Create Session
+                            SessionManager sessionManager = new SessionManager(Login.this, SessionManager.SESSION_USER_SESSION);
+                            sessionManager.createLoginSession(_fullname, _username, _email, _phoneNo, _password, _dataOfBirth, _gender);
+
+                            startActivity(new Intent(getApplicationContext(), RetailerDashboard.class));
 
                         } else {
                             progressbar.setVisibility(View.GONE);
@@ -149,7 +181,6 @@ public class Login extends AppCompatActivity {
                 || networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR));
     }
 
-
     // check the internet connection
     private boolean isConnected(Login login) {
         ConnectivityManager connectivityManager = (ConnectivityManager) login.getSystemService(CONNECTIVITY_SERVICE);
@@ -159,7 +190,6 @@ public class Login extends AppCompatActivity {
 
         return (wifiConn != null && wifiConn.isConnected()) || (mobileConn != null && mobileConn.isConnected());
     }
-
 
     private void showCustomDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);
@@ -171,7 +201,6 @@ public class Login extends AppCompatActivity {
                     finish();
                 });
     }
-
 
     // fields validations
     private boolean validateFields() {
