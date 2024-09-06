@@ -1,44 +1,59 @@
 package com.abhishekbansode.cityguideapp.LocationOwner;
 
 import android.os.Bundle;
-import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
 
-import com.abhishekbansode.cityguideapp.Databases.SessionManager;
 import com.abhishekbansode.cityguideapp.R;
-
-import java.util.HashMap;
+import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 public class RetailerDashboard extends AppCompatActivity {
 
     // Variables
-    TextView textView;
+    ChipNavigationBar chipNavigationBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_retailer_dashboard);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.fragment_container), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
         // Hooks
-        textView = findViewById(R.id.textView);
+        chipNavigationBar = findViewById(R.id.bottom_nav_menu);
 
-        SessionManager sessionManager = new SessionManager(this, SessionManager.SESSION_USER_SESSION);
-        HashMap<String, String> userDetails = sessionManager.getUserDetailsFromSession();
+        // Bottom-nav functions
+        chipNavigationBar.setItemSelected(R.id.bottom_nav_dashboard, true);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new RetailerDashboardFragment()).commit();
+        bottomMenu();
+    }
 
-        String fullName = userDetails.get(SessionManager.KEY_FULLNAME);
-        String phoneNumber = userDetails.get(SessionManager.KEY_PHONENUMBER);
+    private void bottomMenu() {
+        chipNavigationBar.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(int i) {
+                Fragment fragment = null;
 
-        textView.setText(fullName + "\n" + phoneNumber);
+                if (i == (R.id.bottom_nav_manage)) {
+                    fragment = new RetailerManageFragment();
+                } else if (i == (R.id.bottom_nav_profile)) {
+                    fragment = new RetailerProfileFragment();
+                } else {
+                    fragment = new RetailerDashboardFragment();
+                }
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
+            }
+        });
     }
 }

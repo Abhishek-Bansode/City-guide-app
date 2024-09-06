@@ -76,6 +76,7 @@
                         tools:ignore="RelativeOverlap" />
 
                     <RelativeLayout
+                        android:id="@+id/user_dashboard_searchbar"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_below="@+id/app_name"
@@ -136,8 +137,7 @@
                                 android:layout_height="30dp"
                                 android:layout_centerInParent="true"
                                 android:src="@drawable/restaurant_icon"
-                                tools:ignore="ContentDescription">
-                            </ImageView>
+                                tools:ignore="ContentDescription"></ImageView>
 
                         </RelativeLayout>
 
@@ -200,8 +200,7 @@
                                 android:layout_height="30dp"
                                 android:layout_centerInParent="true"
                                 android:src="@drawable/airport_icon"
-                                tools:ignore="ContentDescription">
-                            </ImageView>
+                                tools:ignore="ContentDescription"></ImageView>
 
                         </RelativeLayout>
 

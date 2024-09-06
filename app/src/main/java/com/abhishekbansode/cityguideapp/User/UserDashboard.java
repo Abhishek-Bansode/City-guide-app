@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
@@ -26,6 +27,7 @@ import com.abhishekbansode.cityguideapp.HelperClasses.HomeAdapter.FeaturedAdapte
 import com.abhishekbansode.cityguideapp.HelperClasses.HomeAdapter.FeaturedHelperClass;
 import com.abhishekbansode.cityguideapp.HelperClasses.HomeAdapter.MostViewedAdapter;
 import com.abhishekbansode.cityguideapp.HelperClasses.HomeAdapter.MostViewedHelperClass;
+import com.abhishekbansode.cityguideapp.LocationOwner.RetailerDashboard;
 import com.abhishekbansode.cityguideapp.R;
 import com.google.android.material.navigation.NavigationView;
 
@@ -38,6 +40,7 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
     static final float END_SCALE = 0.5f;
     RecyclerView featuredRecycler, mostViewedRecycler, categoriesRecycler;
     ImageView menuIcon, userLogInSignUpIcon;
+    RelativeLayout relativeLayout;
 
     // Drawer Menu
     DrawerLayout drawerLayout;
@@ -61,6 +64,7 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
         menuIcon = findViewById(R.id.menu_icon);
         contentView = findViewById(R.id.content);
         userLogInSignUpIcon = findViewById(R.id.userLogInIcon);
+        relativeLayout = findViewById(R.id.user_dashboard_searchbar);
 
         // Menu Hooks
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -97,6 +101,12 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
                 exitDialog.setNeutralButton("Cancel", (dialogInterface, i) -> Toast.makeText(UserDashboard.this, "Operation Cancelled!", Toast.LENGTH_SHORT).show());
                 exitDialog.show();
             }
+        });
+
+        // Search-bar ON Click
+        relativeLayout.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), RetailerDashboard.class);
+            startActivity(intent);
         });
     }
 
