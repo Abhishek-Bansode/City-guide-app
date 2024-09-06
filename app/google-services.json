@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "430672145028",
-    "project_id": "city-guide-app-8067d",
-    "storage_bucket": "city-guide-app-8067d.appspot.com"
+    "project_number": "564615586001",
+    "project_id": "city-guide-app-1534f",
+    "storage_bucket": "city-guide-app-1534f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:430672145028:android:40dffc21a4e027fa2fb0d1",
+        "mobilesdk_app_id": "1:564615586001:android:c3575ca7dbd97135dd25f0",
         "android_client_info": {
           "package_name": "com.abhishekbansode.cityguideapp"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCBzzI5_L1qwImTG-tgFBMcVZTLt35k2kE"
+          "current_key": "AIzaSyBFxP5WouVlIQdV7YWw-f-IoLhYpsH6T3s"
         }
       ],
       "services": {
