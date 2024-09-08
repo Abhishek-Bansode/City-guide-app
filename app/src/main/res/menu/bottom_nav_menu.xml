@@ -3,21 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/bottom_nav_dashboard"
-        android:icon="@drawable/bottom_nav_dashboard_icon"
-        android:title="@string/dashboard"
+        android:id="@+id/bottom_nav_home"
+        android:icon="@drawable/bottom_nav_home_icon"
+        android:title="@string/home"
         app:cnb_iconColor="@color/card1" />
 
     <item
-        android:id="@+id/bottom_nav_manage"
-        android:icon="@drawable/bottom_nav_manage_icon"
-        android:title="@string/manage"
+        android:id="@+id/bottom_nav_explore"
+        android:icon="@drawable/bottom_nav_explore_icon"
+        android:title="@string/explore"
         app:cnb_iconColor="@color/card2" />
+
+    <item
+        android:id="@+id/bottom_nav_wishlist"
+        android:icon="@drawable/bottom_nav_wishlist_icon"
+        android:title="@string/wishlist"
+        app:cnb_iconColor="@color/card3" />
 
     <item
         android:id="@+id/bottom_nav_profile"
         android:icon="@drawable/bottom_nav_profile_icon"
         android:title="@string/profile"
-        app:cnb_iconColor="@color/card3" />
+        app:cnb_iconColor="@color/card4" />
 
 </menu>

@@ -38,7 +38,7 @@
     <string name="featured_locations_descriptions">All the locations that are featured and have the top demand in town!</string>
     <string name="most_viewed_locations">Most Viewed</string>
     <string name="categories">Categories</string>
-    <string name="view_all">View All</string>
+    <string name="view_all">See All</string>
     <string name="search_text">Search…</string>
     <string name="searchIconToLeft">SearchIconToLeft</string>
     <string name="mcdonald_s">McDonald\'s</string>
@@ -131,4 +131,10 @@
     <string name="fragment_dashboard">Fragment Dashboard</string>
     <string name="fragment_manage">Fragment Manage</string>
     <string name="fragment_profile">Fragment Profile</string>
+    <string name="explore">Explore</string>
+    <string name="wishlist">Wishlist</string>
+    <string name="fragment_user_explore">Fragment - User Explore</string>
+    <string name="fragment_user_home">Fragment - User Home</string>
+    <string name="fragment_user_profile">Fragment - User Profile</string>
+    <string name="fragment_user_wishlist">Fragment - User Wishlist</string>
 </resources>
