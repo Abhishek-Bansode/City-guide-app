@@ -52,7 +52,6 @@ public class UserDashboard extends AppCompatActivity {
             } else {
                 fragment = new UserHomeFragment();
             }
-
             getSupportFragmentManager().beginTransaction().replace(R.id.user_dashboard_fragment_container, fragment).commit();
         });
     }
