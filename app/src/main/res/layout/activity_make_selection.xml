@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/back_arrow_btn_img"
             android:padding="5dp"
-            android:src="@drawable/general_back_icon" />
+            android:src="@drawable/icon_general_back" />
 
 
         <TextView
@@ -97,7 +97,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="20dp"
                 android:contentDescription="@string/sms_icon_image"
-                android:src="@drawable/field_email_icon" />
+                android:src="@drawable/icon_field_email" />
 
             <TextView
                 android:id="@+id/mail_title"

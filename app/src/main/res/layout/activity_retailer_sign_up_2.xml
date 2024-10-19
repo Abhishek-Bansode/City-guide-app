@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/back_arrow_btn_img"
             android:padding="5dp"
-            android:src="@drawable/general_back_icon"
+            android:src="@drawable/icon_general_back"
             android:transitionName="transition_back_arrow_btn" />
 
         <LinearLayout
@@ -117,7 +117,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/signup_next_button_page2"
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:background="@drawable/custom_btn_bg"
@@ -129,7 +129,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/signup_login_button"
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"

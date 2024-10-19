@@ -4,11 +4,11 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/menu_drawer_home_icon"
+            android:icon="@drawable/icon_menu_drawer_home"
             android:title="@string/home" />
 
         <item
-            android:icon="@drawable/search_icon"
+            android:icon="@drawable/icon_search"
             android:title="@string/search" />
 
         <item
@@ -17,7 +17,7 @@
             android:title="@string/all_categories" />
 
         <item
-            android:icon="@drawable/add_missing_place_icon"
+            android:icon="@drawable/icon_add_missing_place"
             android:title="@string/add_missing_place" />
 
 
@@ -32,7 +32,7 @@
                     android:title="@string/login" />
 
                 <item
-                    android:icon="@drawable/profile_account_icon"
+                    android:icon="@drawable/icon_profile_account"
                     android:title="@string/profile" />
 
                 <item
@@ -51,19 +51,19 @@
 
             <group android:checkableBehavior="single">
                 <item
-                    android:icon="@drawable/restaurant_icon"
+                    android:icon="@drawable/icon_restaurant"
                     android:title="@string/restaurants1" />
 
                 <item
-                    android:icon="@drawable/bank_icon"
+                    android:icon="@drawable/icon_bank"
                     android:title="@string/banks1" />
 
                 <item
-                    android:icon="@drawable/education_icon"
+                    android:icon="@drawable/icon_education"
                     android:title="@string/education1" />
 
                 <item
-                    android:icon="@drawable/shop_icon"
+                    android:icon="@drawable/icon_shop"
                     android:title="@string/shops1" />
 
             </group>
@@ -78,11 +78,11 @@
         <menu>
             <group android:checkableBehavior="none">
                 <item
-                    android:icon="@drawable/share_icon"
+                    android:icon="@drawable/icon_share"
                     android:title="@string/share" />
 
                 <item
-                    android:icon="@drawable/rate_us_icon"
+                    android:icon="@drawable/icon_rate_us"
                     android:title="@string/rate_us" />
             </group>
         </menu>

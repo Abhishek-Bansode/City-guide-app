@@ -52,4 +52,7 @@ dependencies {
     // Bottom Navigation Bar
     implementation 'com.github.ismaeldivita:chip-navigation-bar:1.4.0'
     implementation 'org.jetbrains.kotlin:kotlin-stdlib:2.0.20'
+
+    // Lottie animation
+    implementation "com.airbnb.android:lottie:6.5.2"
 }

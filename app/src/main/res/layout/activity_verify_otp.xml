@@ -18,12 +18,13 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/back_to_signup_page"
             android:padding="5dp"
-            android:src="@drawable/general_close_icon" />
+            android:src="@drawable/icon_general_close" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:transitionName="transition_title_text"
             android:fontFamily="sans-serif-black"
             android:includeFontPadding="false"
             android:text="@string/otp_code_text"
@@ -69,7 +70,7 @@
                 android:id="@+id/pin_view"
                 style="@style/PinWidget.PinView"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:cursorVisible="true"
                 android:inputType="number"
                 android:itemBackground="#65EAEAEA"
@@ -90,6 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
+            android:transitionName="transition_login_btn"
             android:background="@drawable/custom_btn_bg"
             android:text="@string/verify_code"
             android:textColor="@color/black" />

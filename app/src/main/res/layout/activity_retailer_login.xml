@@ -19,7 +19,7 @@
             android:layout_height="32dp"
             android:contentDescription="@string/back_to_retailers_screen"
             android:padding="5dp"
-            android:src="@drawable/general_back_icon" />
+            android:src="@drawable/icon_general_back" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -61,7 +61,7 @@
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/black"
                 app:hintTextColor="@color/black"
-                app:startIconDrawable="@drawable/field_phone_number_icon"
+                app:startIconDrawable="@drawable/icon_field_phone_number"
                 app:startIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -85,7 +85,7 @@
                 app:endIconMode="password_toggle"
                 app:endIconTint="@color/black"
                 app:hintTextColor="@color/black"
-                app:startIconDrawable="@drawable/field_password_icon"
+                app:startIconDrawable="@drawable/icon_field_password"
                 app:startIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText

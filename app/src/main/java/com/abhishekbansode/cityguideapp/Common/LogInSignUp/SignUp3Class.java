@@ -18,6 +18,9 @@ import com.abhishekbansode.cityguideapp.R;
 import com.google.android.material.textfield.TextInputLayout;
 import com.hbb20.CountryCodePicker;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SignUp3Class extends AppCompatActivity {
 
     // variables
@@ -48,14 +51,23 @@ public class SignUp3Class extends AppCompatActivity {
         backBtn = findViewById(R.id.signup3_back_button);
         titleText = findViewById(R.id.signup_title_text);
 
-        // Add transition
-        Pair<View, String>[] pairs = new Pair[4];
 
-        pairs[0] = Pair.create(backBtn, "transition_back_arrow_btn");
-        pairs[1] = Pair.create(nextBtn3, "transition_next_btn");
-        pairs[2] = Pair.create(loginBtn, "transition_login_btn");
-        pairs[3] = Pair.create(titleText, "transition_title_text");
+        // Add transition (OLD Way to doing it) ->
+        // Pair<View, String>[] pairs = new Pair[4];
+        // pairs[0] = Pair.create(backBtn, "transition_back_arrow_btn");
+        // pairs[1] = Pair.create(nextBtn3, "transition_next_btn");
+        // pairs[2] = Pair.create(loginBtn, "transition_login_btn");
+        // pairs[3] = Pair.create(titleText, "transition_title_text");
 
+        // Add transition (NEW Way to doing it)
+        List<Pair<View, String>> pairList = new ArrayList<>();
+        pairList.add(Pair.create(backBtn, "transition_back_arrow_btn"));
+        pairList.add(Pair.create(nextBtn3, "transition_next_btn"));
+        pairList.add(Pair.create(loginBtn, "transition_login_btn"));
+        pairList.add(Pair.create(titleText, "transition_title_text"));
+
+        // Convert the list to an array
+        Pair<View, String>[] pairs =  pairList.toArray(new Pair[0]);
 
         // on click listeners
         nextBtn3.setOnClickListener(view ->  {

@@ -4,9 +4,11 @@
 
     <!--Menu style-->
     <style name="navigationTheme">
+
         <!--color of text and icon when selected-->
         <item name="colorPrimary">@color/colorPrimaryDark</item>
         <item name="colorOnPrimary">@color/colorPrimary</item>
+
         <!--background color when selected-->
         <item name="colorControlHighlight">@color/colorAccent</item>
     </style>

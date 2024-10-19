@@ -14,7 +14,6 @@
         android:orientation="vertical">
 
         <RelativeLayout
-
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize">
 
@@ -25,7 +24,7 @@
                 android:layout_centerVertical="true"
                 android:contentDescription="@string/back_arrow_btn_img"
                 android:padding="15dp"
-                android:src="@drawable/general_back_icon" />
+                android:src="@drawable/icon_general_back" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -34,7 +33,7 @@
                 android:layout_centerVertical="true"
                 android:contentDescription="@string/search_icon"
                 android:padding="15dp"
-                android:src="@drawable/search_icon" />
+                android:src="@drawable/icon_search" />
 
 
         </RelativeLayout>
@@ -79,7 +78,6 @@
                     android:background="#00000000"
                     android:padding="20dp"
                     android:text="@string/expand_all" />
-
 
             </RelativeLayout>
 

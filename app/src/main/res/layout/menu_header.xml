@@ -27,7 +27,7 @@
     <ImageView
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/menu_icon"
+        android:src="@drawable/icon_menu"
         android:layout_above="@id/app_name"
         android:contentDescription="@string/menu_icon_image" />
 
